@@ -1,0 +1,15 @@
+document.write("08/11/08");
+document.write("<h2><a href = \"1.html\">First Post</a></h2><br>");
+document.write("<div class = \"dividernews\"></div><br>");
+document.write("08/16/08");
+document.write("<h2><a href = \"2.html\">DRM and Cartoons</a></h2><br>");
+document.write("<div class = \"dividernews\"></div><br>");
+document.write("08/19/08");
+document.write("<h2><a href = \"3.html\">Markup Cartoons?</a></h2><br>");
+document.write("<div class = \"dividernews\"></div><br>");
+document.write("08/21/08");
+document.write("<h2><a href = \"4.html\">One Week Left!</a></h2><br>");
+document.write("<div class = \"dividernews\"></div><br>");
+document.write("08/22/08");
+document.write("<h2><a href = \"5.html\">New Look</a></h2><br>");
+document.write("<div class = \"dividernews\"></div><br>");

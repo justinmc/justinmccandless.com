@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+<link rel = stylesheet type = "text/css" href = "../style.css">																		<!-- CSS link -->
+
+<title> Justin McCandless </title>
+
+<link REL="SHORTCUT ICON" HREF="../images/faviconjm.ico">																				<!-- Favicon link -->
+																																						
+<?php include("../scripts/functions.php"); ?>																								<!-- php functions -->
+
+</head>
+
+<body>
+
+<br><br>
+<div class = "all">
+   <br>
+   <div class = "titlenav">
+      <script language = "JavaScript" type = "text/javascript" src = "../scripts/titleout.js"></script>					<!-- random title pic javascript -->
+      <ul class = "nav1">
+      <li><a href = "../index.php">&nbsp;</a>
+      </ul>
+      <ul class = "nav2">    
+      <li><a href = "../archive.php">&nbsp;</a>
+      </ul>
+      <ul class = "nav3">    
+      <li><a href = "../aboutme.php">&nbsp;</a>
+      </ul>
+      <ul class = "nav4">    
+      <li><a href = "../links.php">&nbsp;</a>
+      </ul>
+   </div>
+   <br>
+   <div class = "news">
+      <div class = "newstitle">
+         Search
+      </div>
+      <br>
+      <form action="http://www.google.com/cse" id="cse-search-box">																		<!-- Google Custom Search -->
+      <div>
+         <input type="hidden" name="cx" value="011335546969155053337:8wtwpvgol1w" />
+         <input type="hidden" name="ie" value="UTF-8" />
+         <input type="text" name="q" size="18" />
+         <input type="submit" name="sa" value="Search" />
+      </div>
+      </form>
+      <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+      <script type="text/javascript">google.load("elements", "1", {packages: "transliteration"});</script>
+      <script type="text/javascript" src="http://www.google.com/coop/cse/t13n?form=cse-search-box&t13n_langs=en"></script>
+      <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&lang=en"></script>					<!-- End Google Custom Search -->
+
+      <br><br>
+      <div class = "newstitle">
+         Categories      
+      </div>
+      <a href = "../life/index.php">Life</a><br>
+      <a href = "../technology/index.php">Technology</a><br>
+      <a href = "../solutions/index.php">Solutions</a><br>
+      <a href = "../travel/index.php">Travel</a><br>
+      <a href = "../websites/index.php">Websites</a>
+      <br><br>
+      <div class = "newstitle">
+         Recent Posts
+      </div>
+      <?php
+         
+      getnews('Technology');
+
+      ?>
+   </div>
+  
+   <div class = "entries">
+      <h1> <a href = "index.php"> Technology </a> </h1>
+      <br>
+      <a onClick = "javascript:window.open('../images/cattravelb.jpg', 'popup', 'height = 660, width = 1000');" style = "cursor: pointer;">
+      <img src = "../images/cattravel.jpg" alt = "Travel" title = "Me near Manta, Ecuador" style = "float: left; padding: 10px;">
+      </a>
+      <p>
+      My summer trip to Ecuador has made me decide that I really like travel.  This category currently consists
+      mainly of all my entries during that trip, but I plan to do a lot more traveling whenever possible and
+      anything I have to say during these potential trips will go here also.  Even if for awhile it is only in 
+      the general vicinity of my two homebases, Ann Arbor and Las Vegas.  
+      </p>
+      <br clear="all">
+      <p>
+      All recent posts in this category are now in the bar to the right, the
+      <a href = "archive.php">Archive</a>
+      has a list of every post made here, or just start from the beginning or end of them all using the nav
+      buttons down at the bottom.         
+      </p>
+      <br><br><br>
+   </div>
+   <div class = "footer">
+      <div class = "prev">
+         <a href = "1.php">Oldest Post</a>
+      </div>
+      <div class = "next">
+         <?php 
+         
+         $newest = getnewest('Technology');
+         echo "<a href = \"";
+         echo $newest;
+         echo ".php\">Newest Post</a>";
+         
+         ?>
+      </div>
+      <div class = "footerline">
+         <h3> Justin McCandless, 2009 </h3>      
+      </div>
+   </div>   
+</div>
+<br><br>
+
+<script type="text/javascript">																																		<!-- Google Analytics Crap -->
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5561746-1");
+pageTracker._trackPageview();
+</script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+<link rel = stylesheet type = "text/css" href = "../style.css">																		<!-- CSS link -->
+
+<title> Justin McCandless </title>
+
+<link REL="SHORTCUT ICON" HREF="faviconjm.ico">																							<!-- Favicon link -->
+
+</head>
+
+<body>
+<br><br>
+<div class = "all">
+   <br>
+
+      <div class = "titlenav">
+         <script language = "JavaScript" type = "text/javascript" src = "../javascript/titleout.js"></script>								<!-- random title pic javascript -->
+         <ul class = "nav1">
+         <li><a href = "../index.html">&nbsp;</a>
+         </ul>
+         <ul class = "nav2">    
+         <li><a href = "../archive.html">&nbsp;</a>
+         </ul>
+         <ul class = "nav3">    
+         <li><a href = "../aboutme.html">&nbsp;</a>
+         </ul>
+         <ul class = "nav4">    
+         <li><a href = "../links.html">&nbsp;</a>
+         </ul>
+      </div>
+      <br>
+      <div class = "news">
+         <div class = "newstitle">
+            Search
+         </div>
+         Google Ghetto Search
+         <input type = "text" width = "200">
+         <br><br>
+         <div class = "newstitle">
+            Categories      
+         </div>
+         <a href = "../life/index.html">Life</a><br>
+         <a href = "../technology/index.html">Technology</a><br>
+         <a href = "../solutions/index.html">Solutions</a><br>
+         <a href = "../travel/index.html">Travel</a><br>
+         <a href = "../websites/index.html">Websites</a>
+         <br><br>
+         <div class = "newstitle">
+            Recent Posts
+         </div>
+         17-06-09    
+         <h2><a href = "25.html">Huaquillas in Pictures</a></h2><br>
+         <div class = "dividernews">
+            <!-- This div is empty because it's just a pretty line -->      
+         </div><br>
+         17-06-09    
+         <h2><a href = "24.html">Complete Manual Steam Uninstall</a></h2><br>
+         <div class = "dividernews">
+            <!-- This div is empty because it's just a pretty line -->      
+         </div><br>
+         09-06-09    
+         <h2><a href = "23.html">Caballos en Vilcabamba</a></h2><br>
+         <div class = "dividernews">
+            <!-- This div is empty because it's just a pretty line -->      
+         </div><br>
+         08-06-09    
+         <h2><a href = "22.html">Catch Up, Pt 2</a></h2><br>
+         <div class = "dividernews">
+            <!-- This div is empty because it's just a pretty line -->      
+         </div><br>
+         03-06-09
+         <h2><a href = "21.html">Manta</a></h2><br>
+         <div class = "dividernews">
+            <!-- This div is empty because it's just a pretty line -->      
+         </div><br>
+         24-05-09
+         <h2><a href = "20.html">Catch Up, Pt 1</a></h2><br>  
+         <div class = "dividernews">
+            <!-- This div is empty because it's just a pretty line -->      
+         </div><br>
+         19-05-09
+         <h2><a href = "19.html">En Loja</a></h2><br>
+         <div class = "dividernews">
+            <!-- This div is empty because it's just a pretty line -->        
+         </div>
+         01-04-09
+         <h2><a href = "18.html">A Loja</a></h2><br>
+         <div class = "dividernews">
+            <!-- This div is empty because it's just a pretty line -->      
+         </div>
+         02-01-09
+         <h2><a href = "17.html">Turkiball</a></h2><br>
+         <div class = "dividernews">
+            <!-- This div is empty because it's just a pretty line -->      
+         </div>      
+      </div>
+  
+      <div class = "entries">
+         <h1> <a href = "index.html"> Travel </a> </h1>
+         <br>
+         <a onClick = "javascript:window.open('../images/cattravelb.jpg', 'popup', 'height = 660, width = 1000');" style = "cursor: pointer;">
+         <img src = "../images/cattravel.jpg" alt = "Travel" title = "Me near Manta, Ecuador" style = "float: left; padding: 10px;">
+         </a>
+         <p>
+         My summer trip to Ecuador has made me decide that I really like travel.  This category currently consists
+         mainly of all my entries during that trip, but I plan to do a lot more traveling whenever possible and
+         anything I have to say during these potential trips will go here also.  Even if for awhile it is only in 
+         the general vicinity of my two homebases, Ann Arbor and Las Vegas.  
+         </p>
+         <br clear="all">
+         <p>
+         All recent posts in this category are now in the bar to the right, the
+         <a href = "archive.html">Archive</a>
+         has a list of every post made here, or just start from the beginning or end of them all using the nav
+         buttons down at the bottom.         
+         </p>
+         <br><br><br>
+      </div>
+  
+      <div class = "footer">
+         <div class = "prev">
+            <a href = "2.html">Oldest Post</a>
+         </div>
+         <div class = "next">
+            <a href = "2.html">Newest Post</a>
+         </div>
+         <div class = "footerline">
+            <h3> Justin McCandless, 2009 </h3>      
+         </div>
+      </div>
+     
+</div>
+
+
+<script type="text/javascript">																																		<!-- Google Analytics Crap -->
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5561746-1");
+pageTracker._trackPageview();
+</script>
+</body>
+
+</html>
