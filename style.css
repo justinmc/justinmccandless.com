@@ -4,7 +4,8 @@ a:hover { color:#000000; text-decoration: none;}
 
 BODY
 {
-background-color: #483D3B;
+background-color: #ffffff;
+font-size: 12px;
 text-align: center;
 }
 
@@ -18,7 +19,9 @@ color: black;
 h1																						/* entry header */
 {
 text-indent: 20px;
-font-size: 14pt;
+font-size: 32pt;
+font-weight: bold;
+font-family: helvetica;
 color: black;
 }
 
@@ -45,22 +48,13 @@ color: black;
 .all																					/* big div */
 {
 margin: 0 auto;
+text-align: left;
 position: relative; top: -30px;
 width: 880px; height: auto;
 min-height: 1600px;
-border-top: 5px black solid;
-border-left: 5px black solid;
-border-right: 5px black solid;
+border: 0px black solid;
 background-color: #ffffff;
 }
-
-.titlenav																				/* title div class */
-{
-width: 600px; height: 160px;
-border: 0px black solid;
-position: relative; top: 0px; left: 24px;
-background-color: white;
-} 
 
 .title
 {
@@ -69,33 +63,13 @@ background: url('images/title0.jpg');
 }
 .title:hover {background: url('images/title0bg.jpg');}
 
-.entries																					/* entries div class */																			
-{
-position: relative; top: 20px; left: 24px;
-text-align: left; 
-border-top: 1px black solid;
-width: 604px; height: auto;
-padding: 10px;
-background-color: white;
-}
-
-.newstop																				/* top part of newsbar */
-{
-position: relative; top: -10px; left: -10px;
-border: 1px red solid;
-width: 168px; height: 203px;
-padding: 10px;
-background: #ffffff;
-}
-
 .news
 {																						/* holds recent post links */
-position: absolute; top: 0px; right: 0px;
+position: absolute; top: 180px; right: 0px;
 text-align: center;
 border-left: 1px black solid;
 width: 170px; height: 100%;
 padding: 10px;
-background-color: white;
 }
 
 .newstitle																		/* makes a title for the newsbar */
@@ -124,6 +98,16 @@ position: relative; top: 0px; left: 10px;
 border: 0px black solid;
 position: relative; right: 0px;
 height: 26px; width: 393px;
+}
+
+.entries																					/* entries div class */																			
+{
+position: relative; top: 20px; left: 24px;
+text-align: left; 
+border-top: 1px black solid;
+width: 604px; height: auto;
+padding: 10px;
+background-color: white;
 }
 
 .prev
