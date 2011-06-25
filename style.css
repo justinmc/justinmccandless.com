@@ -1,22 +1,24 @@
-a:link {color: #483D3B; text-decoration: underline;}
-a:visited {color: #808080; text-decoration: underline;}
-a:hover { color:#000000; text-decoration: none;}
+a:link {color: #483d3b; text-decoration: underline;}
+a:visited {color: #483d3b; text-decoration: underline;}
+a:hover { color:#d40000; text-decoration: none;}
 
-BODY
+body
 {
 background-color: #ffffff;
 font-size: 12px;
 text-align: center;
 }
 
-p																						/* entry */
+/* entry */
+p
 {
 font-family: sans;
 text-indent: 20px;
 color: black;
 }
 
-h1																						/* entry header */
+/* title */
+h1
 {
 text-indent: 20px;
 font-size: 32pt;
@@ -25,13 +27,22 @@ font-family: helvetica;
 color: black;
 }
 
-h2																							/* mystery */
+/* entry title */
+h2
 {
-font-size: 12pt;
+font-size: 16pt;
 text-align: left;
 }
 
-h6																						/* entry footer */
+/* news title */
+h3
+{
+font-size: 11pt;
+text-align: center;
+}
+
+/* entry footer */
+h4
 {
 text-align: left;
 text-indent: 20px;
@@ -39,13 +50,16 @@ font-size: 7pt;
 color: gray;
 }
 
-h3																						/* site footer */
+/* site footer */
+h5
 {
 font-size: 8pt;
 color: black;
+text-align: center;
 }
 
-.all																					/* big div */
+/* big div */
+.all
 {
 margin: 0 auto;
 text-align: left;
@@ -56,37 +70,32 @@ border: 0px black solid;
 background-color: #ffffff;
 }
 
-.title
-{
-width: 600px; height: 100px;
-background: url('images/title0.jpg');
-}
-.title:hover {background: url('images/title0bg.jpg');}
-
+/* holds recent post links */
 .news
-{																						/* holds recent post links */
-position: absolute; top: 180px; right: 0px;
+{
+position: absolute; top: 100px; right: 0px;
 text-align: center;
-border-left: 1px black solid;
+border-left: 0px black solid;
 width: 170px; height: 100%;
 padding: 10px;
 }
 
-.newstitle																		/* makes a title for the newsbar */
+/* makes a title for the newsbar */
+.newstitle
 {
 padding: 4px;
-background: #483D3B;
+background: url('public/images/newsBack.png');
 color: #ffffff;
 text-align: center;
-font-size: 14pt;
+font-size: 13pt;
 text-decoration: underline;
 font-weight: bold;
 position: relative; top: -10px; left: -10px;
 width: 182px; height: 32px;
 }
-.newstitle:hover {background: #efefef; color: #000000}
 
-.dividernews																		/* the little line b/t news items */
+/* the little line b/t news items */
+.dividernews
 {
 border-top: 1px #483D3B solid;
 width: 116px; height: 6px;
@@ -100,11 +109,12 @@ position: relative; right: 0px;
 height: 26px; width: 393px;
 }
 
-.entries																					/* entries div class */																			
+/* entries div class */
+.entries
 {
 position: relative; top: 20px; left: 24px;
 text-align: left; 
-border-top: 1px black solid;
+border-top: 0px black solid;
 width: 604px; height: auto;
 padding: 10px;
 background-color: white;
@@ -147,84 +157,22 @@ position: relative; top: 16px; left: 40px;
 /************************************************** Navbar ****************************************************/
 
 
-ul.nav1 li
+ul.nav li
 {
 display: inline;
 float: left;
 margin: -4px 0 0 -10px;
 }
-ul.nav2 li
-{
-display: inline;
-float: left;
-margin: -4px 0 0 0px;
-}
-ul.nav3 li
-{
-display: inline;
-float: left;
-margin: -4px 0 0 0px;
-}
-ul.nav4 li
-{
-display: inline;
-float: left;
-margin: -4px 0 0 0px;
-}
 
-ul.nav1 li a
+ul.nav li a
 {
 text-align: center;
-background-image: url('images/home.jpg');
-border: 1px black solid;
-padding: 3px 58px 3px 59px;
+background: #ffffff;
+border: 0px black solid;
+padding: 3px 10px 3px 10px;
 margin: 0 10px 0 0;
 text-decoration: none;
 font-weight: bold;
-font-size: 18pt;
 }
-ul.nav1 li a:hover {background-image: url('images/homeo.jpg');}
-
-ul.nav2 li a
-{
-text-align: center;
-background-image: url('images/archive.jpg');
-border: 1px black solid;
-padding: 3px 58px 3px 59px;
-margin: 0 10px 0 0;
-text-decoration: none;
-font-weight: bold;
-font-size: 18pt;
-}
-ul.nav2 li a:hover {background-image: url('images/archiveo.jpg');}
-
-ul.nav3 li a
-{
-text-align: center;
-background-image: url('images/aboutme.jpg');
-border: 1px black solid;
-padding: 3px 58px 3px 59px;
-margin: 0 10px 0 0;
-text-decoration: none;
-font-weight: bold;
-font-size: 18pt;
-}
-ul.nav3 li a:hover {background-image: url('images/aboutmeo.jpg');}
-
-ul.nav4 li a
-{
-text-align: center;
-background-image: url('images/links.jpg');
-border: 1px black solid;
-padding: 3px 58px 3px 59px;
-margin: 0 10px 0 0;
-text-decoration: none;
-font-weight: bold;
-font-size: 18pt;
-}
-ul.nav4 li a:hover {background-image: url('images/linkso.jpg');}
-
-
-
-
+ul.nav li a:hover {color: #d40000;}
 
