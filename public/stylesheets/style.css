@@ -1,0 +1,154 @@
+a:link {color: #353535; text-decoration: underline;}
+a:visited {color: #353535; text-decoration: underline;}
+a:hover {color:#d40000; text-decoration: none;}
+
+body
+{
+background-color: #ffffff;
+font-size: 12px;
+text-align: center;
+}
+
+/* entry */
+p
+{
+font-family: sans;
+text-indent: 20px;
+color: black;
+}
+
+/* title */
+h1
+{
+text-indent: 20px;
+font-size: 32pt;
+font-weight: bold;
+font-family: helvetica;
+text-decoration: none;
+color: black;
+}
+
+/* entry title */
+h2
+{
+font-size: 16pt;
+text-align: left;
+}
+
+/* news title */
+h3
+{
+font-size: 11pt;
+text-align: center;
+}
+
+/* entry footer */
+h4
+{
+text-align: left;
+text-indent: 20px;
+font-size: 7pt;
+color: gray;
+}
+
+/* site footer */
+h5
+{
+font-size: 8pt;
+color: black;
+text-align: center;
+}
+
+/* big div */
+.all
+{
+border: 0px black solid;
+margin: 0 auto;
+text-align: left;
+position: relative; top: -30px;
+width: 880px; height: auto;
+min-height: 1200px;
+background-color: #ffffff;
+}
+
+	/* top card corner decoration div */
+	.decCornerTop
+	{
+	background-image: url('../images/backPageRound.png');
+	position: absolute; top: -30px; left: 0px;
+	width: 128px; height: 128px;
+	}
+
+	/* holds recent post links */
+	.news
+	{
+	position: absolute; top: 100px; right: 0px;
+	text-align: center;
+	border-left: 0px black solid;
+	width: 170px; height: 100%;
+	padding: 10px;
+	}
+
+	/* makes a title for the newsbar */
+	.newstitle
+	{
+	padding: 4px;
+	background: url('../images/newsBackLight.png');
+	color: #535353;
+	text-align: center;
+	font-size: 13pt;
+	text-decoration: underline;
+	font-weight: bold;
+	position: relative; top: -10px; left: -10px;
+	width: 182px; height: 32px;
+	}
+
+	/* the little line b/t news items */
+	.dividernews
+	{
+	border-top: 1px #483D3B solid;
+	width: 116px; height: 6px;
+	position: relative; top: 0px; left: 10px;
+	}
+
+	/* entries div class */
+	.entries
+	{
+	position: relative; top: 20px; left: 24px;
+	border: 0px black solid;
+	text-align: left; 
+	width: 604px; height: auto;
+	padding: 10px;
+	background-color: white;
+	}
+
+	/* top card corner decoration div */
+	.decCornerBot
+	{
+	background-image: url('../images/backPageBottomRound.png');
+	position: absolute; bottom: 0px; right: 0px;
+	width: 128px; height: 128px;
+	}
+
+/************************************************** Navbar ****************************************************/
+
+
+ul.nav li
+{
+display: inline;
+float: left;
+margin: -4px 0 0 -10px;
+}
+
+ul.nav li a
+{
+text-align: center;
+background: transparent;
+border: 0px black solid;
+padding: 3px 10px 3px 10px;
+margin: 0 10px 0 0;
+text-decoration: none;
+font-weight: bold;
+}
+ul.nav li a:hover {color: #d40000;}
+

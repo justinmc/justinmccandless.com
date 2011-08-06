@@ -1,0 +1,31 @@
+		<h4>Tags</h4>
+		<br>
+<?php
+
+global $tag;
+
+if (!$tag)
+{	$rows = dbRows("tags");
+
+	for ($i = 0; $i < $rows; $i++)
+	{
+		$DATA = dbGet("tags", $i);
+		echo "		<h5><a href = \"tags.php?tag=" . $DATA["tag"] . "\">" . $DATA["tag"] . "</a></h5>\n";
+		echo "		<p>" . $DATA["description"] . "</p><br><br>\n";
+	}
+}
+else
+{
+	$database = new db();
+
+	echo "		<h5>$tag</h5>\n";
+
+	$tagDescription = mysql_fetch_array($database->query("SELECT description FROM tags WHERE tag = '$tag'"));
+	echo "		<p>" . $tagDescription[0] . "</p><br>\n";
+
+	$result = $database->query("SELECT * from Entries WHERE Category = '$tag'");
+	while ($rowEntries = mysql_fetch_array($result))
+		echo "		<a href = \"index.php?entry=" . ($rowEntries["Index"]) . "\">" . $rowEntries["Title"] . "</a><br>\n";
+}
+?>
+		

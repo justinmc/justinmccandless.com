@@ -1,0 +1,5 @@
+        <div class = "newsBox<?php if ($count % 2) echo "T"; ?>">
+		<br>
+        <h2><a href = "index.php?entry=<?php echo ($rows - $count - 1); ?>"><?php echo $DATA["Title"]; ?></a></h4>
+        <h3><?php echo $this->dateMacHum($DATA["Date"]); ?></h3>
+		</div>

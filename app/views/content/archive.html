@@ -1,0 +1,54 @@
+        <h4>Archive</h4><br>
+        Tags:<br><br>
+		<?php $this->tags(); ?>
+		<br><br>
+        <table border = "0" width = "600" cellpadding = "2">
+        <tr class = "dark">
+        <td>Entry</td>
+        <td>Title</td>
+        <td>Tags</td>
+        <td>Date Posted</td>
+        </tr>
+        <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+          </tr>
+
+<?php
+
+	global $DBjmc;
+
+    $counter = $DBjmc->numRows("Entries") - 1;
+    while ($counter >= 0)
+    {
+		$color = "light";
+		if ($counter % 2)
+			$color = "dark";
+
+        $DATA = $DBjmc->getRow("Entries", $counter);
+        echo "      <tr class = \"$color\">";
+        echo "      <td>";
+        echo ($DATA['Index'] + 1);
+        echo "      </td>\n";																		// Entry
+        echo "      <td><a href = \"index.php?entry=" . ($DATA['Index']) . "\"";
+        echo ($DATA['Index'] + 1);
+        echo ".php\">";   
+        echo $DATA['Title'];
+        echo "      </a></td>\n";																	// Title
+        echo "      <td><a href = \"tags.php\">";
+        echo $DATA['Category'];
+        echo "      </a></td>\n";																	// Category
+        echo "      <td>";
+        echo $this->dateMacHum($DATA['Date']);
+        echo "      </td>\n";																		// Date Posted
+        echo "      </tr>\n";
+        $counter--;
+    }
+ 
+?>
+      </table>
+
+      <br><br><br>
+
