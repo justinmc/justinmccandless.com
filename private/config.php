@@ -9,8 +9,8 @@
 
 
 $server = "localhost";
-$username = "?";
-$password = "?";
+$username = "justin";
+$password = "MjustbeatND";
 $db = "justinmccandless";
 
 ?>
