@@ -5,14 +5,14 @@ a:hover {color:#d40000; text-decoration: none;}
 body
 {
 background-color: #ffffff;
-font-size: 12px;
+font-size: 11pt;
 text-align: center;
 }
 
 /* entry */
 p
 {
-font-family: sans;
+font-family: verdana;
 text-indent: 20px;
 color: black;
 }

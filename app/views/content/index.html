@@ -3,21 +3,27 @@
 // connect to DB and paste latest entry
 		global $entry, $DBjmc;
 
-		$DATA = $DBjmc->getRow("Entries", ($entry));
+		$DATA = $page->dbJmc->getRow("Entries", ($entry - 1));
 
 		echo "<h4>" . $DATA["Title"] . "</h4><br>\n";
 
 		echo $DATA["Entry"] . "<br>\n";
 ?>
 
+        <!-- Google +1 -->
+        <div style = "float: right;">
+            <g:plusone annotation="none"></g:plusone>
+        </div>
+
+
 		<h6>Posted: <?php echo $this->dateMacHum($DATA["Date"]); ?> </h6>
 
         <br><br>
 <?php
 
-if ($entry > 0)
+if ($entry > 1)
 	echo '<a href = "index.php?entry=' . ($entry - 1) . '" style = "position: absolute; left: 0px;">Previous</a>';
-if ($entry < ($DBjmc->numRows("Entries") - 1))
+if ($entry < ($page->dbJmc->numRows("Entries")))
 	echo '<a href = "index.php?entry=' . ($entry + 1) . '" style = "position: absolute; right: 0px;">Next</a>';
 
 ?>

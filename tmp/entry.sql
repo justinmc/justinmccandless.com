@@ -1,23 +1,16 @@
 INSERT INTO Entries VALUES (56, 57, 'http://www.justinmccandless.com/index.php?entry=56', 'Transportation in Lima', '2011-10-19 20:00:00', '', 'Travel', 
 '
+Speaking a new language and dealing with ignorance
 <p>
-Telefonica has a big volunteering program here, and my boss invited me to participate in an event where we act as "big brothers/sisters" to some elementary school kids for an afternoon.  I always enjoy stuff like that, so I signed up and spent the day volunteering last Friday.
+During my four months in Ecuador, my first time outside the US, a lot of excitement was surrounding my first experience speaking another language.  Whenever I could walk to the store and make myself understood as I went through the checkout line, it was pretty fun and motivational overcoming the fear of actually trying to do something like that.  Towards the end of the trip I started to get a lot more comfortable with my Spanish, and 
 </p>
-<img src = "http://www.justinmccandless.com/public/uploads/images/volunteering1.jpg" alt = "Image not found">
 <p>
-We decorated our cafeteria like crazy and welcomed all the kids there with some free food and a quick announcement when they got off their school bus.  I met my "little brother", an 11 year old name Ángel.  I took him on a tour of our building and showed him where I work and all the other offices.  He said his favorite subject is computer class, so it was cool to get to show him where our engineers work.  After we finished my building we ran into two of my coworkers giving tours as well, so we joined with them and went to talk to all the people they know in another building.  The kids had a warm welcome at each office and got a ton of Telefonica swag, I was actually kind of jealous...
+I remember a Spanish professor in college, who was from Cuba, talking about life as a foreigner in the US.  One time he told a simple story along the lines of being in line at the grocery store, and having the kid at the counter ask for his ID for his credit card when he asked none of the several preceding white American customers.  My professor chewed the kid out, refused to show his ID, and called the manager over.  As a student in the class I understood my professor\'s side and thought that the kid was stupid for doing that whether his intentions were ill or not, but I still didn\'t think my professor was justified in causing such a big scene out of something so subtle.  Now here in Lima years later I understand everything he must have been feeling.  As a foreigner who wants nothing more than to fit in, being reminded that you are different, that people think differently of you, and in this case that people think NEGATIVELY of you amplifies the situation a million times and makes you feel so terrible.  I have felt the urge to react much more strongly to situations much more subtle than this, and now I think that if I had been in line behind my professor that day then I would have had his back in a heartbeat.  For what it\'s worth, the manager wound up being an old student of my professor\'s, so his complaint was heard and my professor won that one.
 </p>
-<img src = "http://www.justinmccandless.com/public/uploads/images/volunteering2.jpg" alt = "Image not found">
-<img src = "http://www.justinmccandless.com/public/uploads/images/volunteering3.jpg" alt = "Image not found"> 
+
 <p>
-Afterwards we all met back in the cafeteria and then boarded the bus to go to the "Parque de las Aguas", a really nice park full of fountains in Lima.  They let us loose in the park and I got to run around with the kids and get a little bit wet.  We had a picnic lunch later in the grass, and the kids finally realized I was a foreigner.  After that point they never stopped asking me to translate every word they could think of (including their names) into "American".  The day felt really short when we had to say goodbye and the kids went back to school on their bus.  I had a ton of fun (and I hope the kids did too), even though somehow I managed to get sunburnt through the ever present clouds in Lima.
+As negative as this post may have sounded, things like this actually just remind me why I am here in Lima.  The understanding that I have gained here will be with me for the rest of my life and will be something I share with anyone I run into who seems out of place.  And when I do, I will always be the person who makes them feel a little bit closer to home.
 </p>
-<img src = "http://www.justinmccandless.com/public/uploads/images/volunteering4.jpg" alt = "Image not found">
-<img src = "http://www.justinmccandless.com/public/uploads/images/volunteering5.jpg" alt = "Image not found"> 
-<p>
-And finally, this will be in a Telefónica publication!  Sorry for the picture of text.
-</p>
-<img src = "http://www.justinmccandless.com/public/uploads/images/volunteering6.jpg" alt = "Image not found"> 
 '
 
 /*
