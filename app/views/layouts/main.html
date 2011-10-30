@@ -1,15 +1,28 @@
 <?php
 
-require $rootDir . '/app/controllers/ssi.php';
+require $rootDir . '/app/controllers/page.php';
+$page = new Page($rootDir, $urlDir);
 
 $entry = $_REQUEST["entry"];
 
-$DBjmc = new DB();
-
 if ($entry == '')
-	$entry = $DBjmc->numRows("Entries") - 1;
+	$entry = $page->dbJmc->numRows("Entries");
 
 $tag = $_REQUEST["tag"];
+
+// Cookie must be set before any html!
+$identifier = $_REQUEST["identifier"];
+if ($identifier)
+  setcookie("identifier", $identifier, time() +108000);
+else
+  $identifier = $_COOKIE["identifier"];
+  
+if ($_REQUEST["logout"])
+{ setcookie("identifier", "", time() -108000);
+  $identifier = "";
+}
+$authenticated = 0; //authenticate($identifier); // identifier set at top
+
 
 ?>
 
@@ -20,8 +33,18 @@ $tag = $_REQUEST["tag"];
 <head>																																		
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 <link rel = stylesheet type = "text/css" href = "<?php echo $rootUrl; ?>/stylesheets/main.css">
+
+<!-- Google +1 Code -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
 <title>Justin McCandless</title>
-<link REL="SHORTCUT ICON" href="<?php echo $rootUrl; ?>/images/faviconjm.ico">
+<link REL="SHORTCUT ICON" href="<?php echo $rootUrl; ?>/images/favicon.ico">
 <!-- <link rel="alternate" type="application/rss+xml" title="All RSS" href="http://justinmccandless.com/feeds/rss.xml" /> -->
 <!-- <link rel="alternate" type="application/rss+xml" title="All Atom" href="http://justinmccandless.com/feeds/atom.xml" /> -->
 <?php
@@ -72,31 +95,30 @@ else
         </div>
 <?php
 
-$data = new DB();
-
-$include = new SSI();
-$include->tags();
+$page->include->tags();
 
 ?>
         <br><br>
 <?php  
 
-$include->news();
+$page->include->news();
 
 ?>
     </div>
     <div class = "main">
 <?php  
 
-$include->content($filename);
+$page->include->content($filename, $authenticated);
 
 // $include->comments($isPost);
 
 ?>
-    </div>
-    <p class = "h7" style = "position: relative; bottom: -128px;"> content copyright Justin McCandless <?php echo date('Y'); ?> </p>
-    <p class = "h7" style = "position: relative; bottom: -118px;"> design and framework <a href = "http://www.github.com/justinmc/justinmccandless.com">open source</a> </p>
-	<p class = "h7" style = "position: relative; bottom: -118px;">&nbsp;</p>
+
+	</div>
+	<br>
+    <p class = "h7" style = "position: relative; bottom: -98px;"> content copyright Justin McCandless <?php echo date('Y'); ?> </p>
+    <p class = "h7" style = "position: relative; bottom: -88px;"> design and framework <a href = "http://www.github.com/justinmc/justinmccandless.com">open source</a> </p>
+	<p class = "h7" style = "position: relative; bottom: -108px;">&nbsp;</p>
 	<div class = "decCornerBot"></div>
 </div>
 

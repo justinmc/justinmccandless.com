@@ -7,48 +7,59 @@
 ****************************************************************************/
 
 
-require $rootDir . '/app/models/db.php';
+//require $rootDir . '/app/models/db.php';
 
 class SSI
 {
 // handles all the including of main div content!
-    public function content($phpFile)
-    {	global $rootDir;
+    public function content($phpFile, $authenticated)
+    {	global $page;
 
-		$htmlFile = $rootDir . '/app/views/content/' . $this->nameShort($phpFile) . '.html';
+		$htmlFile = $page->dirRoot . '/app/views/content/' . $this->nameShort($phpFile) . '.html';
+		$htmlFileProtected = $page->dirRoot . '/app/views/content/protected/' . $this->nameShort($phpFile) . '.html';
 
-		if (!include($htmlFile))
+		if (!include($htmlFile))	// otherwise, normal content is included
 		{
-			echo '<br>Sorry!  The page you\'re trying to access does not exist.' . "<br>\n";
-			echo '|' . $phpFile . "|<br>\n";
-			echo '<a href = "/index.php">Return Home</a>';
+			if ($authenticated)
+			{
+				if (!include($htmlFileProtected))	// otherwise, protected content is included
+				{	echo '<br>Sorry!  The page you\'re trying to access does not exist.' . "<br>\n";
+					echo '|' . $phpFile . "|<br>\n";
+					echo '<a href = "/index.php">Return Home</a>';
+				}
+			}
+			else
+			{	echo '<br>Sorry!  Either the page you\'re trying to access does not exist, or you are not authorized to view it.' . "<br>\n";
+				echo '|' . $phpFile . "|<br>\n";
+				echo '<a href = "/index.php">Return Home</a>';
+			}
 		}
-
+	
 		return;
 	}
 
 // includes all tags from the tags table
 	public function	tags()
-	{	global $rootDir, $data;
+	{	global $page;
 
-		$rows = $data->numRows("tags");
-
+		$rows = $page->dbJmc->numRows("tags");
+		
 		for ($count = 0; $count < $rows; $count++)
-		{	$DATA = $data->getRow("tags", $count);
-			include ($rootDir . '/app/views/content/tag.html');
+		{	$DATA = $page->dbJmc->getRow("tags", $count);
+			include ($page->dirRoot . '/app/views/content/tag.html');
 		}
 	}
 
 // includes the latest entries
 	public function news()
-	{	global $rootDir, $data;
+	{	global $page;
 
-		$rows = $data->numRows("Entries");
+		$rows = $page->dbJmc->numRows("Entries");
 
 		for ($count = 0; $count < 8; $count++)
-		{	$DATA = $data->getRow("Entries", ($rows - $count - 1));
+		{	$DATA = $page->dbJmc->getRow("Entries", ($rows - $count - 1));
 
-			include ($rootDir . '/app/views/content/news.html');	
+			include ($page->dirRoot . '/app/views/content/news.html');	
 		}
 
 		return;

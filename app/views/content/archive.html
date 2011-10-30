@@ -18,21 +18,19 @@
 
 <?php
 
-	global $DBjmc;
-
-    $counter = $DBjmc->numRows("Entries") - 1;
+    $counter = $page->dbJmc->numRows("Entries") - 1;
     while ($counter >= 0)
     {
 		$color = "light";
 		if ($counter % 2)
 			$color = "dark";
 
-        $DATA = $DBjmc->getRow("Entries", $counter);
+        $DATA = $page->dbJmc->getRow("Entries", $counter);
         echo "      <tr class = \"$color\">";
         echo "      <td>";
         echo ($DATA['Index'] + 1);
         echo "      </td>\n";																		// Entry
-        echo "      <td><a href = \"index.php?entry=" . ($DATA['Index']) . "\"";
+        echo "      <td><a href = \"index.php?entry=" . ($DATA['Index'] + 1) . "\"";
         echo ($DATA['Index'] + 1);
         echo ".php\">";   
         echo $DATA['Title'];
