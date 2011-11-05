@@ -1,0 +1,11 @@
+        <h4>Search Results</h4><br>
+		<div id="cse-search-results" style = "border: 1px black solid; height: 1300px;"></div>
+		<script type="text/javascript">
+		  var googleSearchIframeName = "cse-search-results";
+		  var googleSearchFormName = "cse-search-box";
+		  var googleSearchFrameWidth = 800;
+		  var googleSearchDomain = "www.google.com";
+		  var googleSearchPath = "/cse";
+		</script>
+		<script type="text/javascript" src="<?php echo $rootUrl; ?>/javascripts/show_afs_search.js"></script>
+		<br><br>
