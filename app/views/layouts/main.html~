@@ -97,17 +97,11 @@ $page->include->tags();
 
 ?>
         <br><br>
-		<!-- Google Ad Sense Code -->
-		<script type="text/javascript"><!--
-		google_ad_client = "ca-pub-2475745093547689";
-		/* 180&#42;150 small retangle */
-		google_ad_slot = "8421616956";
-		google_ad_width = 180;
-		google_ad_height = 150;
-		//-->
-		</script>
-		<script type="text/javascript"
-		src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+<?php
+
+$page->include->content("googleAdSense.html", $authenticated);
+
+?>
 		<br><br>
 <?php  
 
@@ -118,7 +112,9 @@ $page->include->news();
     <div class = "main">
 <?php  
 
-$page->include->content($filename, $authenticated);
+// The name of all main content div html files are the same as the php file
+$filenameS = $page->nameShort($filename);
+$page->include->content(($filenameS . ".html"), $authenticated);
 
 // $include->comments($isPost);
 

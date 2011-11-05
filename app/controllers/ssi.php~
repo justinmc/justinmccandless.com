@@ -23,13 +23,13 @@ class SSI
 			if ($authenticated)
 			{
 				if (!include($htmlFileProtected))	// otherwise, protected content is included
-				{	echo '<br>Sorry!  The content you\'re trying to access does not exist.' . "<br>\n";
+				{	echo '<br>Sorry!  The page you\'re trying to access does not exist.' . "<br>\n";
 					echo '|' . $phpFile . "|<br>\n";
 					echo '<a href = "/index.php">Return Home</a>';
 				}
 			}
 			else
-			{	echo '<br>Sorry!  Either the content you\'re trying to access does not exist, or you are not authorized to view it.' . "<br>\n";
+			{	echo '<br>Sorry!  Either the page you\'re trying to access does not exist, or you are not authorized to view it.' . "<br>\n";
 				echo '|' . $phpFile . "|<br>\n";
 				echo '<a href = "/index.php">Return Home</a>';
 			}

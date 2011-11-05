@@ -26,15 +26,6 @@ class Page
 		$this->include = new SSI();
 		$this->dirRoot = $root;
 	}
-
-// takes a whole url and returns just the name of the file without the extension
-	public function nameShort ($filename)
-	{
-		$start = strripos($filename, '/');
-		$end = strripos($filename, '.');
-
-		return (substr($filename, ($start + 1), ($end - $start - 1)));
-	}
 }
 
 ?>
