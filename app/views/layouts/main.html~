@@ -98,17 +98,16 @@ $page->include->tags();
 ?>
         <br><br>
 		<!-- Google Ad Sense Code -->
-<script type="text/javascript"><!--
-google_ad_client = "ca-pub-2475745093547689";
-/* 180&#42;150 small retangle */
-google_ad_slot = "8421616956";
-google_ad_width = 180;
-google_ad_height = 150;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
+		<script type="text/javascript"><!--
+		google_ad_client = "ca-pub-2475745093547689";
+		/* 180&#42;150 small retangle */
+		google_ad_slot = "8421616956";
+		google_ad_width = 180;
+		google_ad_height = 150;
+		//-->
+		</script>
+		<script type="text/javascript"
+		src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 		<br><br>
 <?php  
 
