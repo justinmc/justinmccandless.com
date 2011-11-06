@@ -2,8 +2,8 @@
         Tags:<br><br>
 <?php 
 
-for ($count = 0; $count < $this->dbJmc->numRows("tags"); $count++)
-{	$DATA = $this->dbJmc->getRow("tags", $count);
+for ($count = 0; $count < $this->dbJmc->numRows("dat_tags"); $count++)
+{	$DATA = $this->dbJmc->getRow("dat_tags", $count);
 	echo '<a href = "' . $this->rootUrl . '/tags.php?tag=' . $DATA["tag"] . '">' . $DATA["tag"] . '</a><br>' . "\n";
 }
 ?>
@@ -12,7 +12,6 @@ for ($count = 0; $count < $this->dbJmc->numRows("tags"); $count++)
         <tr class = "dark">
         <td>Entry</td>
         <td>Title</td>
-        <td>Tags</td>
         <td>Date Posted</td>
         </tr>
         <tr>
@@ -24,28 +23,25 @@ for ($count = 0; $count < $this->dbJmc->numRows("tags"); $count++)
 
 <?php
 
-    $counter = $this->dbJmc->numRows("Entries") - 1;
+    $counter = $this->dbJmc->numRows("dat_entries") - 1;
     while ($counter >= 0)
     {
 		$color = "light";
 		if ($counter % 2)
 			$color = "dark";
 
-        $DATA = $this->dbJmc->getRow("Entries", $counter);
+        $DATA = $this->dbJmc->getRow("dat_entries", $counter);
         echo "      <tr class = \"$color\">";
         echo "      <td>";
-        echo ($DATA['Index'] + 1);
+        echo ($DATA['id'] + 1);
         echo "      </td>\n";																		// Entry
-        echo "      <td><a href = \"index.php?entry=" . ($DATA['Index'] + 1) . "\"";
-        echo ($DATA['Index'] + 1);
+        echo "      <td><a href = \"index.php?entry=" . ($DATA['id'] + 1) . "\"";
+        echo ($DATA['id'] + 1);
         echo ".php\">";   
-        echo $DATA['Title'];
+        echo $DATA['title'];
         echo "      </a></td>\n";																	// Title
-        echo "      <td><a href = \"tags.php\">";
-        echo $DATA['Category'];
-        echo "      </a></td>\n";																	// Category
         echo "      <td>";
-        echo $this->dateMacHum($DATA['Date']);
+        echo $this->dateMacHum($DATA['date']);
         echo "      </td>\n";																		// Date Posted
         echo "      </tr>\n";
         $counter--;

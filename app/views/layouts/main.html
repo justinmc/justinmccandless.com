@@ -11,6 +11,20 @@ $page = new Page($rootDir, $urlDir, $_REQUEST["entry"], $_REQUEST["tag"], $_REQU
 
 <head>																																		
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="description" content="Personal blog of the life Justin McCandless">
+<?php
+
+// Tags to put into keywords meta
+$tags = $page->entryToTags($page->entry);
+for ($i = 0; $i < count($tags); $i++) 
+{	if ($i < (count($tags) - 1))
+		$tags[$i] = $tags[$i] . ", ";
+}
+
+?>
+<meta name="keywords" content="<?php foreach ($tags as $tag) echo $page->tagIdToTitle($tag[0]); ?>"> 
+<meta name="google-site-verification" content="udKKu8OEdAdtCp2TvUqEh_YcRkXu8uIE4a2qYEtEniE" />
+
 <link rel = stylesheet type = "text/css" href = "<?php echo $rootUrl; ?>/stylesheets/main.css">
 
 <!-- Google +1 Code -->
@@ -93,8 +107,8 @@ google_ad_height = 150;
 <?php
 
 // Tags
-for ($count = 0; $count < $page->dbJmc->numRows("tags"); $count++)
-{	$DATA = $page->dbJmc->getRow("tags", $count);
+for ($count = 0; $count < $page->dbJmc->numRows("dat_tags"); $count++)
+{	$DATA = $page->dbJmc->getRow("dat_tags", $count);
 	echo '<a href = "' . $page->rootUrl . '/tags.php?tag=' . $DATA["tag"] . '">' . $DATA["tag"] . '</a><br>' . "\n";
 }
 
@@ -112,8 +126,8 @@ if ($page->nameShort($filename) != "search")
 
 // Recent posts in sidebar
 for ($count = 0; $count < 8; $count++)
-{	$DATA = $page->dbJmc->getRow("Entries", ($page->dbJmc->numRows("Entries") - $count - 1));
-	include($page->dirRoot . '/app/views/content/news.html');	
+{	$DATA = $page->dbJmc->getRow("dat_entries", ($page->dbJmc->numRows("dat_entries") - $count - 1));
+	include($page->dirRoot . '/app/views/content/news.html');
 }
 
 
