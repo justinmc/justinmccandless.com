@@ -7,22 +7,20 @@
 ****************************************************************************/
 
 
-//require $rootDir . '/app/models/session.php';
 require $rootDir . '/app/models/db.php';
-// require $rootDir . '/app/controllers/ssi.php';
+require $rootDir . '/app/controllers/session.php';
 
 class Page
 {
-//	private $user;
+	public $user;
 	public $dbJmc;
 	public $dirRoot;	// /home/usr/justin/public_html/justinmccandless.com/public/
 	public $dirUrl;		// http://www.justinmccandless.com/
 	public $entry;		// What # entry to display, requested by index.php?entry=57 for example
 	public $tag;		// What tag to display if it's wanted
 
-	public function Page($root, $url, $reqEntry, $reqTag)
+	public function Page($root, $url, $reqEntry, $reqTag, $reqLogout, $postId)
 	{
-//		$user = new Session();
 		$this->dbJmc = new DB();
 		$this->dirRoot = $root;
 
@@ -32,17 +30,21 @@ class Page
 			$this->entry = $reqEntry;
 
 		$this->tag = $reqTag;
+
+		$this->user = new Session($postId);
+		if ($reqLogout)
+			$this->user->logout();
 	}
 
 	// includes the content file given in $file, also handles authentication
-    public function content($file, $authenticated)
+    public function content($file)
     {
 		$htmlFile = $this->dirRoot . '/app/views/content/' . $file;
 		$htmlFileProtected = $this->dirRoot . '/app/views/content/protected/' . $file;
 
 		if (!include($htmlFile))	// otherwise, normal content is included
 		{
-			if ($authenticated)
+			if ($this->user->authenticated)
 			{
 				if (!include($htmlFileProtected))	// otherwise, protected content is included
 				{	echo '<br>Sorry!  The content you\'re trying to access does not exist.' . "<br>\n";
@@ -60,7 +62,7 @@ class Page
 		return;
 	}
 
-// takes a whole url and returns just the name of the file without the extension
+	// takes a whole url and returns just the name of the file without the extension
 	public function nameShort ($filename)
 	{
 		$start = strripos($filename, '/');

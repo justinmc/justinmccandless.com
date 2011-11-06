@@ -1,21 +1,7 @@
 <?php
 
 require $rootDir . '/app/controllers/page.php';
-$page = new Page($rootDir, $urlDir, $_REQUEST["entry"], $_REQUEST["tag"]);
-
-// Cookie must be set before any html!
-$identifier = $_REQUEST["identifier"];
-if ($identifier)
-  setcookie("identifier", $identifier, time() +108000);
-else
-  $identifier = $_COOKIE["identifier"];
-  
-if ($_REQUEST["logout"])
-{ setcookie("identifier", "", time() -108000);
-  $identifier = "";
-}
-$authenticated = 0; //authenticate($identifier); // identifier set at top
-
+$page = new Page($rootDir, $urlDir, $_REQUEST["entry"], $_REQUEST["tag"], $_POST["identifier"], $_REQUEST["logout"]);
 
 ?>
 
@@ -109,7 +95,7 @@ google_ad_height = 150;
 // Tags
 for ($count = 0; $count < $page->dbJmc->numRows("tags"); $count++)
 {	$DATA = $page->dbJmc->getRow("tags", $count);
-	echo '<a href = "' . $rootUrl . '/tags.php?tag=' . $DATA["tag"] . '">' . $DATA["tag"] . '</a><br>' . "\n";
+	echo '<a href = "' . $page->rootUrl . '/tags.php?tag=' . $DATA["tag"] . '">' . $DATA["tag"] . '</a><br>' . "\n";
 }
 
 ?>
