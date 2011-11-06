@@ -1,6 +1,12 @@
         <h4>Archive</h4><br>
         Tags:<br><br>
-		<?php $this->tags(); ?>
+<?php 
+
+for ($count = 0; $count < $this->dbJmc->numRows("tags"); $count++)
+{	$DATA = $this->dbJmc->getRow("tags", $count);
+	echo '<a href = "' . $this->rootUrl . '/tags.php?tag=' . $DATA["tag"] . '">' . $DATA["tag"] . '</a><br>' . "\n";
+}
+?>
 		<br><br>
         <table border = "0" width = "600" cellpadding = "2">
         <tr class = "dark">
@@ -18,14 +24,14 @@
 
 <?php
 
-    $counter = $page->dbJmc->numRows("Entries") - 1;
+    $counter = $this->dbJmc->numRows("Entries") - 1;
     while ($counter >= 0)
     {
 		$color = "light";
 		if ($counter % 2)
 			$color = "dark";
 
-        $DATA = $page->dbJmc->getRow("Entries", $counter);
+        $DATA = $this->dbJmc->getRow("Entries", $counter);
         echo "      <tr class = \"$color\">";
         echo "      <td>";
         echo ($DATA['Index'] + 1);

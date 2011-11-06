@@ -1,5 +1,5 @@
         <div class = "newsBox<?php if ($count % 2) echo "T"; ?>">
 		<br>
         <h2><a href = "index.php?entry=<?php echo ($page->dbJmc->numRows("Entries") - $count - 1); ?>"><?php echo $DATA["Title"]; ?></a></h4>
-        <h3><?php echo $page->dateMacHum($DATA["Date"]); ?></h3>
+        <h3><?php echo $page->dateMacHums($DATA["Date"]); ?></h3>
 		</div>

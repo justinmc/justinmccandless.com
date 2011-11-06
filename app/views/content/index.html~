@@ -18,7 +18,7 @@
 		<div class="fb-like" style = "float: right" data-send="false" data-layout="button_count" data-width="120" data-show-faces="false" data-font="verdana"></div>
 		
 		<br>
-		<h6>Posted: <?php echo $this->dateMacHum($DATA["Date"]); ?> </h6>
+		<h6>Posted: <?php echo $page->dateMacHum($DATA["Date"]); ?> </h6>
 
         <br><br>
 <?php
