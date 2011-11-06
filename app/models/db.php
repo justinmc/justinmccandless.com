@@ -49,6 +49,7 @@ class DB
 
 		// search for $row in that column
 		$QUERY = mysql_query("SELECT * FROM `$table` WHERE `$primary` = $row");
+
 	    $DATA = mysql_fetch_array($QUERY);
 
 		$this->close($con);
@@ -75,46 +76,7 @@ class DB
 
 }
 
-// Accesses the database, returns an array of a given row
-function dbGet ($table, $row)
-{   global $server, $username, $password, $db;
-
-    $con = mysql_connect($server, $username, $password);
-    if (!$con)
-        die('getDB could not connect: ' . mysql_error());
-
-    mysql_select_db($db);
-
-	// find the name of the table's Primary Key
-	$QUERY = mysql_query("SHOW KEYS FROM $table WHERE Key_name = 'PRIMARY'");
-	$DATA = mysql_fetch_array($QUERY);
-	$primary = $DATA["Column_name"];
-
-	// search for $row in that column
-    $QUERY = mysql_query("SELECT * FROM `$table` WHERE `$primary` = $row");
-    $DATA = mysql_fetch_array($QUERY);
-
-    mysql_close($con);
-    return ($DATA);
-}
-
-// Returns the number of rows in table
-function dbRows ($table)
-{  global $server, $username, $password, $db;
-
-   $con = mysql_connect($server, $username, $password);
-   if (!$con)
-      die('getrows could not connect: ' . mysql_error());
-      
-   mysql_select_db($db);
-   
-   $QUERY = mysql_query("SELECT * FROM $table");   
-   $rows = 0;
-   $rows = mysql_num_rows($QUERY);
-
-   return ($rows);
-}
-
+/*
 // Returns index of row with field that matches string in the column, -1 otherwise
 function dbColSearch ($col, $string, $table)
 { 
@@ -174,5 +136,6 @@ function dbInsert($index, $string, $table)
 
     mysql_close($con);
 }
+*/
 
 ?>

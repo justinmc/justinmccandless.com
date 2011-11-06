@@ -2,28 +2,31 @@
 		<br>
 <?php
 
-if (!$tag)
-{	$rows = dbRows("tags");
+if (!$this->tag)
+{	$rows = $this->dbJmc->numRows("dat_tags");
 
 	for ($i = 0; $i < $rows; $i++)
 	{
-		$DATA = dbGet("tags", $i);
+		$DATA = $this->dbJmc->getRow("dat_tags", $i);
 		echo "		<h5><a href = \"tags.php?tag=" . $DATA["tag"] . "\">" . $DATA["tag"] . "</a></h5>\n";
 		echo "		<p>" . $DATA["description"] . "</p><br><br>\n";
 	}
 }
 else
 {
-	$database = new db();
+	$tagTitle = mysql_fetch_array($this->dbJmc->query("SELECT `tag` from dat_tags WHERE `id` = '$this->tag'"));
+	echo "		<h5>$tagTitle[0]</h5>\n";
 
-	echo "		<h5>$tag</h5>\n";
-
-	$tagDescription = mysql_fetch_array($database->query("SELECT description FROM tags WHERE tag = '$tag'"));
+	$tagDescription = mysql_fetch_array($this->dbJmc->query("SELECT description FROM dat_tags WHERE id = '$this->tag'"));
 	echo "		<p>" . $tagDescription[0] . "</p><br>\n";
 
-	$result = $database->query("SELECT * from Entries WHERE Category = '$tag'");
-	while ($rowEntries = mysql_fetch_array($result))
-		echo "		<a href = \"index.php?entry=" . ($rowEntries["Index"]) . "\">" . $rowEntries["Title"] . "</a><br>\n";
+	$result = $this->dbJmc->query("SELECT `entry` from rel_entries_tags where `tag` = $this->tag");
+	while ($entryIds = mysql_fetch_array($result))
+	{
+		$entryTitle = mysql_fetch_array($this->dbJmc->query("SELECT `title` from dat_entries where `id` = $entryIds[0]"));
+		echo "		<a href = \"index.php?entry=" . ($entryIds[0] + 1) . "\">" . $entryTitle[0] . "</a><br>\n";
+	}
 }
+
 ?>
 		

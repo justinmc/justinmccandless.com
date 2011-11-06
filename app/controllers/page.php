@@ -17,7 +17,7 @@ class Page
 	public $dirRoot;	// /home/usr/justin/public_html/justinmccandless.com/public/
 	public $dirUrl;		// http://www.justinmccandless.com/
 	public $entry;		// What # entry to display, requested by index.php?entry=57 for example
-	public $tag;		// What tag to display if it's wanted
+	public $tag;		// What tag to display if it's wanted (id, not name of tag)
 
 	public function Page($root, $url, $reqEntry, $reqTag, $reqLogout, $postId)
 	{
@@ -25,11 +25,12 @@ class Page
 		$this->dirRoot = $root;
 
 		if ($reqEntry == '')
-			$this->entry = $this->dbJmc->numRows("Entries");
+			$this->entry = $this->dbJmc->numRows("dat_entries");
 		else
 			$this->entry = $reqEntry;
 
-		$this->tag = $reqTag;
+		$tagId = mysql_fetch_array($this->dbJmc->query("SELECT `id` from dat_tags WHERE `tag` = '$reqTag'"));
+		$this->tag = $tagId[0];
 
 		$this->user = new Session($postId);
 		if ($reqLogout)
@@ -60,6 +61,29 @@ class Page
 		}
 	
 		return;
+	}
+
+	public function entryToTags ($entry)
+	{
+		$entry--;
+		$result = $this->dbJmc->query("SELECT `tag` from rel_entries_tags where `entry` = $entry");
+
+		$tags = array();
+		$i = 0;
+		while ($holder = mysql_fetch_array($result))
+		{
+			$tags[$i] = $holder;
+			$i++;
+		}
+
+		return $tags;
+	}
+
+	public function tagIdToTitle ($id)
+	{
+		$result = mysql_fetch_array($this->dbJmc->query("SELECT `tag` from dat_tags where `id` = $id"));
+
+		return $result[0];
 	}
 
 	// takes a whole url and returns just the name of the file without the extension
