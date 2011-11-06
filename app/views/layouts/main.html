@@ -1,7 +1,7 @@
 <?php
 
 require $rootDir . '/app/controllers/page.php';
-$page = new Page($rootDir, $urlDir, $_REQUEST["entry"], $_REQUEST["tag"], $_REQUEST["logout"], $_POST["identifier"]);
+$page = new Page($rootDir, $rootUrl, $filename, $_REQUEST["entry"], $_REQUEST["tag"], $_REQUEST["logout"], $_POST["identifier"]);
 
 ?>
 
@@ -14,7 +14,7 @@ $page = new Page($rootDir, $urlDir, $_REQUEST["entry"], $_REQUEST["tag"], $_REQU
 <meta name="description" content="Personal blog of the life Justin McCandless">
 <?php
 
-// Tags to put into keywords meta
+// Tags to put into keywords meta tag
 $tags = $page->entryToTags($page->entry);
 for ($i = 0; $i < count($tags); $i++) 
 {	if ($i < (count($tags) - 1))
@@ -36,7 +36,7 @@ for ($i = 0; $i < count($tags); $i++)
   })();
 </script>
 
-<title>Justin McCandless</title>
+<title><?php echo $page->title; ?></title>
 <link REL="SHORTCUT ICON" href="<?php echo $rootUrl; ?>/images/favicon.ico">
 <!-- <link rel="alternate" type="application/rss+xml" title="All RSS" href="http://justinmccandless.com/feeds/rss.xml" /> -->
 <!-- <link rel="alternate" type="application/rss+xml" title="All Atom" href="http://justinmccandless.com/feeds/atom.xml" /> -->
