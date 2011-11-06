@@ -1,5 +1,5 @@
         <h4>Search Results</h4><br>
-		<div id="cse-search-results" style = "border: 1px black solid; height: 1300px;"></div>
+		<div id="cse-search-results" style = "height: 1100px; overflow: hidden;"></div>
 		<script type="text/javascript">
 		  var googleSearchIframeName = "cse-search-results";
 		  var googleSearchFormName = "cse-search-box";

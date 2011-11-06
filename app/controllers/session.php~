@@ -31,6 +31,8 @@ class Session
 			$this->authenticated = 1;
 		else
 			$this->authenticated = 0;
+
+echo "auth is " . $this->authenticated;
 	}
 
 	public function logout()

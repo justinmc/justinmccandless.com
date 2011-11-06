@@ -66,7 +66,7 @@ h6
 text-align: left;
 text-indent: 20px;
 font-size: 7pt;
-color: #a2a2a2;
+color: #939393;
 }
 
 /* site footer */
