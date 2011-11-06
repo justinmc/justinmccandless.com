@@ -15,14 +15,18 @@ class Page
 	public $user;
 	public $dbJmc;
 	public $dirRoot;	// /home/usr/justin/public_html/justinmccandless.com/public/
-	public $dirUrl;		// http://www.justinmccandless.com/
+	public $rootUrl;	// http://www.justinmccandless.com/
+	public $filename;
 	public $entry;		// What # entry to display, requested by index.php?entry=57 for example
 	public $tag;		// What tag to display if it's wanted (id, not name of tag)
+	public $title;		// Title used in the title tag on this page
 
-	public function Page($root, $url, $reqEntry, $reqTag, $reqLogout, $postId)
+	public function Page($root, $url, $file, $reqEntry, $reqTag, $reqLogout, $postId)
 	{
 		$this->dbJmc = new DB();
 		$this->dirRoot = $root;
+		$this->rootUrl = $url;
+		$this->filename = $file;
 
 		if ($reqEntry == '')
 			$this->entry = $this->dbJmc->numRows("dat_entries");
@@ -35,6 +39,28 @@ class Page
 		$this->user = new Session($postId);
 		if ($reqLogout)
 			$this->user->logout();
+
+		$this->title = "The Personal Blog of Justin McCandless";
+		$pageS = $this->nameShort($this->filename);
+		if ($pageS == "projects")
+			$this->title = $this->title . " | Projects";
+		else if ($pageS == "about")
+			$this->title = $this->title . " | About";
+		else if ($pageS == "archive")
+			$this->title = $this->title . " | Archive";
+		else if ($pageS == "tags")
+		{	$this->title = $this->title . " | Tags";
+			if ($this->tag != "")
+			{	$tagTitle = mysql_fetch_array($this->dbJmc->query("SELECT `tag` from dat_tags WHERE `id` = '$this->tag'"));
+				$this->title = $this->title . " | " . $tagTitle[0];
+			}
+		}
+		else
+		{	$entryTitle = mysql_fetch_array($this->dbJmc->query("SELECT `title` from dat_entries WHERE `id` = ($this->entry - 1)"));
+			$this->title = $this->title . " | " . $entryTitle[0];
+		}
+
+
 	}
 
 	// includes the content file given in $file, also handles authentication
