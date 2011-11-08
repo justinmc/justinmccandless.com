@@ -98,7 +98,7 @@ class Page
 		$i = 0;
 		while ($holder = mysql_fetch_array($result))
 		{
-			$tags[$i] = $holder;
+			$tags[$i] = $holder[0];
 			$i++;
 		}
 

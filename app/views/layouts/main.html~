@@ -22,7 +22,7 @@ for ($i = 0; $i < count($tags); $i++)
 }
 
 ?>
-<meta name="keywords" content="<?php foreach ($tags as $tag) echo $page->tagIdToTitle($tag[0]); ?>"> 
+<meta name="keywords" content="<?php foreach ($tags as $tag) echo $page->tagIdToTitle($tag); ?>"> 
 <meta name="google-site-verification" content="udKKu8OEdAdtCp2TvUqEh_YcRkXu8uIE4a2qYEtEniE" />
 
 <link rel = stylesheet type = "text/css" href = "<?php echo $rootUrl; ?>/stylesheets/main.css">
@@ -36,7 +36,7 @@ for ($i = 0; $i < count($tags); $i++)
   })();
 </script>
 
-<title><?php echo $this->title; ?></title>
+<title><?php echo $page->title; ?></title>
 <link REL="SHORTCUT ICON" href="<?php echo $rootUrl; ?>/images/favicon.ico">
 <!-- <link rel="alternate" type="application/rss+xml" title="All RSS" href="http://justinmccandless.com/feeds/rss.xml" /> -->
 <!-- <link rel="alternate" type="application/rss+xml" title="All Atom" href="http://justinmccandless.com/feeds/atom.xml" /> -->

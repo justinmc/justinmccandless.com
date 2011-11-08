@@ -17,12 +17,13 @@ $page = new Page($rootDir, $rootUrl, $filename, $_REQUEST["entry"], $_REQUEST["t
 // Tags to put into keywords meta tag
 $tags = $page->entryToTags($page->entry);
 for ($i = 0; $i < count($tags); $i++) 
-{	if ($i < (count($tags) - 1))
+{	$tags[$i] = $page->tagIdToTitle($tags[$i]);
+	if ($i < (count($tags) - 1))
 		$tags[$i] = $tags[$i] . ", ";
 }
 
 ?>
-<meta name="keywords" content="<?php foreach ($tags as $tag) echo $page->tagIdToTitle($tag[0]); ?>"> 
+<meta name="keywords" content="<?php foreach ($tags as $tag) echo $tag; ?>"> 
 <meta name="google-site-verification" content="udKKu8OEdAdtCp2TvUqEh_YcRkXu8uIE4a2qYEtEniE" />
 
 <link rel = stylesheet type = "text/css" href = "<?php echo $rootUrl; ?>/stylesheets/main.css">

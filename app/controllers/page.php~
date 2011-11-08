@@ -56,7 +56,7 @@ class Page
 			}
 		}
 		else
-		{	$entryTitle = mysql_fetch_array($this->dbJmc->query("SELECT `title` from dat_entries WHERE `id` = ($this->entry + 1)"));
+		{	$entryTitle = mysql_fetch_array($this->dbJmc->query("SELECT `title` from dat_entries WHERE `id` = ($this->entry - 1)"));
 			$this->title = $this->title . " | " . $entryTitle[0];
 		}
 
