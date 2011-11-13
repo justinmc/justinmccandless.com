@@ -20,7 +20,7 @@ else
 	$tagDescription = mysql_fetch_array($this->dbJmc->query("SELECT description FROM dat_tags WHERE id = '$this->tag'"));
 	echo "		<p>" . $tagDescription[0] . "</p><br>\n";
 
-	$result = $this->dbJmc->query("SELECT `entry` from rel_entries_tags where `tag` = $this->tag");
+	$result = $this->dbJmc->query("SELECT `entry` from rel_entries_tags where `tag` = '$this->tag' ORDER BY id desc");
 	while ($entryIds = mysql_fetch_array($result))
 	{
 		$entryTitle = mysql_fetch_array($this->dbJmc->query("SELECT `title` from dat_entries where `id` = $entryIds[0]"));

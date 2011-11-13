@@ -7,10 +7,23 @@
  *****************************************************************************/
 
 
-require ($rootDir . '/private/config.php');
+//require $rootDir . '/private/config.php';
 
 class DB
 {
+	private $server;
+	private $username;
+	private $password;
+	private $db;
+
+	function DB ($server, $username, $password, $db)
+	{
+		$this->server = $server;
+		$this->username = $username;
+		$this->password = $password;
+		$this->db = $db;
+	}
+
 	// Executes a SQL query and returns the result
 	function query ($queryString)
 	{
@@ -56,15 +69,14 @@ class DB
 
     	return ($DATA);
 	}
-	
-	private function connect()
-	{	global $server, $username, $password, $db;
 
-    	$con = mysql_connect($server, $username, $password);
+	private function connect()
+	{
+    	$con = mysql_connect($this->server, $this->username, $this->password);
 	    if (!$con)
     	    die('getDB could not connect: ' . mysql_error());
 
-	    mysql_select_db($db);
+	    mysql_select_db($this->db);
 
 		return ($con);
 	}
@@ -73,7 +85,6 @@ class DB
 	{
 	    mysql_close($con);
 	}
-
 }
 
 /*
@@ -94,6 +105,27 @@ function dbColSearch ($col, $string, $table)
 	return -1;
 }
 
+	// Inserts a new row given the index and an array of strings for column values
+	function dbInsert($index, $string, $table)
+	{
+		$con = $this->connect();
+
+		$query = "INSERT INTO `$table` VALUES ('$index";
+		for ($i = 0; $i < sizeof($string); $i++)
+		{   $string[$i] = str_replace("\'", "''", $string[$i]);            // PHP to SQL apostrophe escape (\' to '')
+			$query = $query . "', '" . $string[$i];
+		}
+		$query = $query . "')";
+
+		$result = mysql_query($query);
+
+		if (!$result)
+		    die("MYSQL ERROR: " . mysql_error());
+
+		$this->close($con);
+	}
+	
+
 // Writes a string to a cell given by its row and column
 function dbWrite($row, $col, $string, $table)
 {     global $server, $username, $password, $db;
@@ -111,31 +143,6 @@ function dbWrite($row, $col, $string, $table)
       mysql_close($con);
 }
 
-
-// Inserts a new row given the index and an array of strings for column values
-function dbInsert($index, $string, $table)
-{	global $server, $username, $password, $db;
-
-	$con = mysql_connect($server, $username, $password);
-    if (!$con)
-    	die('Could not connect: ' . mysql_error());
-
-	mysql_select_db($db);
-
-	$query = "INSERT INTO `$table` VALUES ('$index";
-	for ($i = 0; $i < sizeof($string); $i++)
-    {   $string[$i] = str_replace("\'", "''", $string[$i]);            // PHP to SQL apostrophe escape (\' to '')
-		$query = $query . "', '" . $string[$i];
-    }
-	$query = $query . "')";
-
-	$result = mysql_query($query);
-
-    if (!$result)
-        die("MYSQL ERROR: " . mysql_error());
-
-    mysql_close($con);
-}
 */
 
 ?>
