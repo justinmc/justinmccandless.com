@@ -2,11 +2,31 @@
 
 // connect to DB and paste latest entry
 
-		$DATA = $this->dbJmc->getRow("dat_entries", ($this->entry - 1));
+$DATA = $this->dbJmc->getRow("dat_entries", ($this->entry - 1));
 
-		echo "<h4>" . $DATA["title"] . "</h4><br>\n";
+echo "<h4>" . $DATA["title"] . "</h4><br>\n";
 
-		echo $DATA["entry"] . "<br>\n";
+echo "<p style = \"position: relative; top: -40px;\">";
+
+echo "Tags: ";
+$commas;
+for ($i = 0; $i < count($this->tags); $i++)
+{
+	if ($i == (count($this->tags) - 1))
+		$commas[$i] = "";
+	else
+		$commas[$i] = ", ";
+}
+for ($i = 0; $i < count($this->tags); $i++)
+	echo "<a href = \"$this->rootUrl/tags.php?tag=" . $this->tags[$i] . "\">" . $this->tags[$i] . "</a>$commas[$i]";
+echo "</p>";
+
+if ($this->entry > 1)
+	echo '<a href = "index.php?entry=' . ($this->entry - 1) . '" style = "position: absolute; left: 0px;">Previous</a>';
+if ($this->entry < ($this->dbJmc->numRows("dat_entries")))
+	echo '<a href = "index.php?entry=' . ($this->entry + 1) . '" style = "position: absolute; right: 0px;">Next</a>';
+
+echo "<br><br>\n" . $DATA["entry"] . "<br>\n";
 ?>
 
 		<br><br>
@@ -16,9 +36,9 @@
         </div>
 		<!-- Facebook Like -->
 		<div class="fb-like" style = "float: right" data-send="false" data-layout="button_count" data-width="120" data-show-faces="false" data-font="verdana"></div>
-		
+
 		<br>
-		<h6>Posted: <?php echo $this->dateMacHum($DATA["Date"]); ?> </h6>
+		<h6>Posted: <?php echo $this->dateMacHum($DATA["date"]); ?> </h6>
 
         <br><br>
 <?php

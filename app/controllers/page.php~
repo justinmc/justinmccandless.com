@@ -14,19 +14,24 @@ class Page
 {
 	public $user;
 	public $dbJmc;
-	public $dirRoot;	// /home/usr/justin/public_html/justinmccandless.com/public/
-	public $rootUrl;	// http://www.justinmccandless.com/
+	public $dirRoot;		// /home/usr/justin/public_html/justinmccandless.com/public/
+	public $rootUrl;		// http://www.justinmccandless.com/
 	public $filename;
-	public $entry;		// What # entry to display, requested by index.php?entry=57 for example
-	public $tag;		// What tag to display if it's wanted (id, not name of tag)
-	public $title;		// Title used in the title tag on this page
+	public $entry;			// What # entry to display, requested by index.php?entry=57 for example
+	public $tag;			// What tag to display if it's wanted (tag page) (id, not name of tag)
+	public $tags;			// What tags pertain to this post if needed (names in array)
+	public $title;			// Title used in the title tag on this page
+	public $description;	// Description for description meta tag
 
 	public function Page($root, $url, $file, $reqEntry, $reqTag, $reqLogout, $postId)
 	{
-		$this->dbJmc = new DB();
 		$this->dirRoot = $root;
 		$this->rootUrl = $url;
 		$this->filename = $file;
+
+		require $this->dirRoot . '/private/config.php';
+
+		$this->dbJmc = new DB($server, $username, $password, $db);
 
 		if ($reqEntry == '')
 			$this->entry = $this->dbJmc->numRows("dat_entries");
@@ -35,8 +40,28 @@ class Page
 
 		$tagId = mysql_fetch_array($this->dbJmc->query("SELECT `id` from dat_tags WHERE `tag` = '$reqTag'"));
 		$this->tag = $tagId[0];
+		$this->tags = $this->entryToTags($this->entry);
+		for ($i = 0; $i < count($this->tags); $i++) 
+			$this->tags[$i] = $this->tagIdToTitle($this->tags[$i]);
 
-		$this->user = new Session($postId);
+		$this->description = "The Personal Blog of Justin McCandless";
+		if ($this->tag != "")
+			$this->description = $this->description . " | " . $this->tagIdToTile($this->tag);
+		else if (strpos($this->filename, "archive") != false)
+			$this->description = $this->description . " | Entry Archive";
+		else if (strpos($this->filename, "about") != false)
+			$this->description = $this->description . " | About";
+		else if (strpos($this->filename, "projects") != false)
+			$this->description = $this->description . " | My Projects";
+		else if (strpos($this->filename, "tags") != false)
+			$this->description = $this->description . " | Entry Tags";
+		else if (strpos($this->filename, "index") != false)
+		{
+			$DATA = $this->dbJmc->getRow("dat_entries", ($this->entry - 1));
+			$this->description = $this->description . " | " . substr(str_replace("\n", "", strip_tags($DATA["entry"])), 0, 128);
+		}
+
+		$this->user = new Session($passwordAdmin, $postId);
 		if ($reqLogout)
 			$this->user->logout();
 
@@ -59,8 +84,6 @@ class Page
 		{	$entryTitle = mysql_fetch_array($this->dbJmc->query("SELECT `title` from dat_entries WHERE `id` = ($this->entry - 1)"));
 			$this->title = $this->title . " | " . $entryTitle[0];
 		}
-
-
 	}
 
 	// includes the content file given in $file, also handles authentication
@@ -98,7 +121,7 @@ class Page
 		$i = 0;
 		while ($holder = mysql_fetch_array($result))
 		{
-			$tags[$i] = $holder;
+			$tags[$i] = $holder[0];
 			$i++;
 		}
 

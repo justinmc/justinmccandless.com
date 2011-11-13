@@ -2,7 +2,7 @@
 
 require $rootDir . '/app/controllers/page.php';
 $page = new Page($rootDir, $rootUrl, $filename, $_REQUEST["entry"], $_REQUEST["tag"], $_REQUEST["logout"], $_POST["identifier"]);
-
+echo "lol!";
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -11,21 +11,13 @@ $page = new Page($rootDir, $rootUrl, $filename, $_REQUEST["entry"], $_REQUEST["t
 
 <head>																																		
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-<meta name="description" content="Personal blog of the life Justin McCandless">
-<?php
-
-// Tags to put into keywords meta tag
-$tags = $page->entryToTags($page->entry);
-for ($i = 0; $i < count($tags); $i++) 
-{	if ($i < (count($tags) - 1))
-		$tags[$i] = $tags[$i] . ", ";
-}
-
-?>
-<meta name="keywords" content="<?php foreach ($tags as $tag) echo $page->tagIdToTitle($tag); ?>"> 
+<meta name="description" content="<?php echo $page->description; ?>">
+<meta name="keywords" content="<?php foreach ($page->tags as $tag) echo $tag . ", "; ?>"> 
 <meta name="google-site-verification" content="udKKu8OEdAdtCp2TvUqEh_YcRkXu8uIE4a2qYEtEniE" />
 
 <link rel = stylesheet type = "text/css" href = "<?php echo $rootUrl; ?>/stylesheets/main.css">
+<script type="text/javascript" src="<?php echo $page->rootUrl; ?>/javascripts/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="<?php echo $page->rootUrl; ?>/javascripts/ckeditor/_samples/sample.js"></script>
 
 <!-- Google +1 Code -->
 <script type="text/javascript">
@@ -109,7 +101,7 @@ google_ad_height = 150;
 // Tags
 for ($count = 0; $count < $page->dbJmc->numRows("dat_tags"); $count++)
 {	$DATA = $page->dbJmc->getRow("dat_tags", $count);
-	echo '<a href = "' . $page->rootUrl . '/tags.php?tag=' . $DATA["tag"] . '">' . $DATA["tag"] . '</a><br>' . "\n";
+	echo '<a href = "' . $page->rootUrl . '/tags.php?tag=' . $DATA["tag"] . '">' . $DATA["tag"] . '</a> ';
 }
 
 ?>
@@ -172,10 +164,10 @@ pageTracker._trackPageview();
 
 Notes
 
-Right now, you link to entries via Index.  Previously it was done via Number.  So watch out for old links no longer working.
-look at git's site for design
-make sure google search works
-add adwords
-fix favicon
+look at entry 27, broken links
+change to dynamic description meta tag
+change to better urls
+prettier tags
+
 
 -->

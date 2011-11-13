@@ -11,9 +11,12 @@ class Session
 {
 	public $authenticated;
 	private $identifier;
+	private $passwordAdmin;
 
-	public function Session($id)
+	public function Session($passwordAdmin, $id)
 	{
+		$this->passwordAdmin = $passwordAdmin;
+
 		// Cookie must be set before any html!
 		if ($id)
 		{  $identifier = $id;
@@ -27,7 +30,7 @@ class Session
 
 	public function authenticate($id)
 	{
-		if ($id == "glamis")
+		if ($id == $this->passwordAdmin)
 			$this->authenticated = 1;
 		else
 			$this->authenticated = 0;
@@ -37,6 +40,7 @@ class Session
 	{
 		setcookie("identifier", "", time() -108000);
 		$this->identifier = "";
+		$this->authenticated = 0;
 	}
 }
 
