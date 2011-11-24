@@ -46,7 +46,7 @@ class Page
 
 		$this->description = "The Personal Blog of Justin McCandless";
 		if ($this->tag != "")
-			$this->description = $this->description . " | " . $this->tagIdToTile($this->tag);
+			$this->description = $this->description . " | " . $this->tagIdToTitle($this->tag);
 		else if (strpos($this->filename, "archive") != false)
 			$this->description = $this->description . " | Entry Archive";
 		else if (strpos($this->filename, "about") != false)
@@ -150,6 +150,19 @@ class Page
 		$dateHuman = substr($dateMachine, 0, 10); // yyyy-mm-dd no time
 
 		return ($dateHuman);
+	}
+
+// removes last directory from a path (includes trailing slash in output, in input doesn't matter)
+	public function dirUp ($dir)
+	{
+		// remove trailing slash if there is one
+		if (substr($dir, (strlen($dir) - 1), strlen($dir)) == "/")
+			$dir = substr($dir, 0, (strlen($dir) - 1));
+
+		if (strrpos($dir, "/"))
+			return substr($dir, 0, (strrpos($dir, "/") + 1));
+		else
+			return ""
 	}
 }
 

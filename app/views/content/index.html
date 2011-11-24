@@ -4,7 +4,7 @@
 
 $DATA = $this->dbJmc->getRow("dat_entries", ($this->entry - 1));
 
-echo "<h4>" . $DATA["title"] . "</h4><br>\n";
+echo "<h2>" . $DATA["title"] . "</h2><br>\n";
 
 echo "<p style = \"position: relative; top: -40px;\">Tags: ";
 
@@ -37,7 +37,7 @@ echo "<br><br>\n" . $DATA["entry"] . "<br>\n";
 		<div class="fb-like" style = "float: right" data-send="false" data-layout="button_count" data-width="120" data-show-faces="false" data-font="verdana"></div>
 
 		<br>
-		<h6>Posted: <?php echo $this->dateMacHum($DATA["date"]); ?> </h6>
+		<h4>Posted: <?php echo $this->dateMacHum($DATA["date"]); ?> </h4>
 
         <br><br>
 <?php

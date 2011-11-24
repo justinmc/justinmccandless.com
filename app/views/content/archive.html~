@@ -12,7 +12,6 @@ for ($count = 0; $count < $this->dbJmc->numRows("dat_tags"); $count++)
         <tr class = "dark">
         <td>Entry</td>
         <td>Title</td>
-        <td>Tags</td>
         <td>Date Posted</td>
         </tr>
         <tr>
