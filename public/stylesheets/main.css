@@ -2,6 +2,8 @@ a:link {color: #353535; text-decoration: underline;}
 a:visited {color: #353535; text-decoration: underline;}
 a:hover {color:#d40000; text-decoration: none;}
 
+a.h1:link {text-decoration: none;}
+
 body
 {
 background-color: #ffffff;
@@ -29,31 +31,15 @@ text-decoration: none;
 color: black;
 }
 
-/* news title */
-h2
-{
-font-size: 11pt;
-text-indent: 16px;
-text-align: left;
-}
-
-/* news date */
-h3
-{
-font-size: 8pt;
-color: black;
-text-align: right;
-}
-
 /* entry title */
-h4
+h2
 {
 font-size: 16pt;
 text-align: left;
 }
 
 /* entry subtitle */
-h5
+h3
 {
 text-align: left;
 text-indent: 20px;
@@ -61,12 +47,28 @@ font-size: 10pt;
 }
 
 /* entry date */
-h6
+h4
 {
 text-align: left;
 text-indent: 20px;
 font-size: 7pt;
 color: #939393;
+}
+
+/* news title */
+h5
+{
+font-size: 11pt;
+text-indent: 16px;
+text-align: left;
+}
+
+/* news date */
+h6
+{
+font-size: 8pt;
+color: black;
+text-align: right;
 }
 
 /* site footer */
@@ -142,20 +144,13 @@ background-color: #ffffff;
 	width: 182px; height: 32px;
 	}
 
-	/* the little line b/t news items */
-	.dividernews
-	{
-	border-top: 1px #483D3B solid;
-	width: 116px; height: 6px;
-	position: relative; top: 0px; left: 10px;
-	}
-
 	/* box that holds each news item */
 	.newsBox
 	{
 	background-image: url('../images/newsBackLight.png');
 	padding: 8px;
-	width: 100%; height: 100px;
+	width: 100%; height: auto;
+	min-height: 100px;
 	position: relative; top: 0px; left: 0px;
 	}
 
@@ -164,7 +159,8 @@ background-color: #ffffff;
 	{
 	background-color: transparent;
 	padding: 8px;
-	width: 100%; height: 100px;
+	width: 100%; height: auto;
+	min-height: 100px;
 	position: relative; top: 0px; left: 0px;
 	}
 

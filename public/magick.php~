@@ -1,0 +1,13 @@
+<?php
+header('Content-type: image/jpeg');
+
+$file = $_REQUEST["file"];
+$x = 600; //$_REQUEST["x"];
+$y = 0; //$_REQUEST["y"];
+
+$image = new Imagick($file);
+$image->adaptiveResizeImage($x,$y);
+
+echo $image;
+?>
+

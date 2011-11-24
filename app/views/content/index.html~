@@ -4,11 +4,10 @@
 
 $DATA = $this->dbJmc->getRow("dat_entries", ($this->entry - 1));
 
-echo "<h4>" . $DATA["title"] . "</h4><br>\n";
+echo "<h2>" . $DATA["title"] . "</h2><br>\n";
 
-echo "<p style = \"position: relative; top: -40px;\">";
+echo "<p style = \"position: relative; top: -40px;\">Tags: ";
 
-echo "Tags: ";
 $commas;
 for ($i = 0; $i < count($this->tags); $i++)
 {

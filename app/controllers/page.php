@@ -151,6 +151,19 @@ class Page
 
 		return ($dateHuman);
 	}
+
+// removes last directory from a path (includes trailing slash in output, in input doesn't matter)
+	public function dirUp ($dir)
+	{
+		// remove trailing slash if there is one
+		if (substr($dir, (strlen($dir) - 1), strlen($dir)) == "/")
+			$dir = substr($dir, 0, (strlen($dir) - 1));
+
+		if (strrpos($dir, "/"))
+			return substr($dir, 0, (strrpos($dir, "/") + 1));
+		else
+			return "";
+	}
 }
 
 ?>
