@@ -8,33 +8,43 @@ if ($name != "")
 {
 
 	$date = $_REQUEST["date"];
-	$entry = $_REQUEST["entry"];
-	$id = $this->dbJmc->numRows('dat_entries');
+	$entryHtml = $_REQUEST["entryHtml"];
+	$modified = $_REQUEST["modified"];
+	$id = $_REQUEST["id"];
 
-	$entry = str_replace("'", "\'", $entry);
+	$entryHtml = str_replace("'", "\'", $entryHtml);
 
-	$query = "INSERT INTO dat_entries VALUES ($id, '$name', '$date', 0, '$entry');";
-
+	$query;
+	if ($_REQUEST["type"] == "insert")
+		$query = "INSERT INTO dat_entries VALUES ($id, '$name', '$date', '$modified', '$entryHtml');";
+	else
+		$query = "UPDATE dat_entries SET id = $id, title = '$name', date = '$date', dateEdit = '$modified', entry = '$entryHtml' WHERE id = $id";
+echo $query;
 	$this->dbJmc->query($query);
 
-	echo "<b style = \"color: green;\">New Post Succeeded!</b>\n";
+	echo "<b style = \"color: green;\">Update Succeeded!</b>\n";
 }
 if ($entry != "")
 {
-	$DATA = $this->dbJmc->getRow("dat_entries", 32); //($entry - 1));
+	$DATA = $this->dbJmc->getRow("dat_entries", ($entry - 1));
 }
 
 ?>
 		<br><br>
 		<form method = "post" action = "<?php echo $this->rootUrl; ?>/admin.php">
+		<input type = "hidden" id = "type" name = "type" value = "<?php if ($entry == "") echo "insert"; else echo "update"; ?>">
+		<input type = "hidden" id = "id" name = "id" value = "<?php if ($entry == "") echo $this->dbJmc->numRows('dat_entries'); else echo ($entry - 1); ?>">
 		Name:<br>
-		<input type = "text" id = "date" name = "name" value = "">
+		<input type = "text" id = "name" name = "name" value = "<?php echo $DATA["title"]; ?>">
 		<br><br>
 		Date:<br>
-		<input type = "text" id = "date" name = "date" value = "<?php echo date('Y-m-d H:i:s'); ?>">
+		<input type = "text" id = "date" name = "date" value = "<?php if ($DATA["date"] != "") echo $DATA["date"]; else echo date('Y-m-d H:i:s'); ?>">
+		<br><br>
+		Modified Date:<br>
+		<input type = "text" id = "modified" name = "modified" value = "<?php if ($DATA["date"] != "") echo date('Y-m-d H:i:s'); ?>">
 		<br><br>
 		Entry:<br>
-		<textarea class="ckeditor" cols="80" name="entry" rows="10"><?php echo $DATA["entry"]; ?></textarea>
+		<textarea class="ckeditor" cols="80" name="entryHtml" rows="10"><?php echo $DATA["entry"]; ?></textarea>
 		<br><br>
         <input type = "submit" value = "Submit">
  		</form>
