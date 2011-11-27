@@ -20,7 +20,7 @@ class Session
 		// Cookie must be set before any html!
 		if ($id)
 		{  $identifier = $id;
-		  setcookie("identifier", $id, time() +108000);
+		  setcookie("identifier", $id, time() +(60 * 60));
 		}
 		else
 		  $identifier = $_COOKIE["identifier"];
