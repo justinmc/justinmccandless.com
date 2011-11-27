@@ -1,6 +1,7 @@
 		<h2>New Entry</h2>
 <?php
 
+$entry = $_REQUEST["entry"];
 $name = $_REQUEST["name"];
 
 if ($name != "")
@@ -18,6 +19,10 @@ if ($name != "")
 
 	echo "<b style = \"color: green;\">New Post Succeeded!</b>\n";
 }
+if ($entry != "")
+{
+	$DATA = $this->dbJmc->getRow("dat_entries", ($entry - 1));
+}
 
 ?>
 		<br><br>
@@ -29,7 +34,7 @@ if ($name != "")
 		<input type = "text" id = "date" name = "date" value = "<?php echo date('Y-m-d H:i:s'); ?>">
 		<br><br>
 		Entry:<br>
-		<textarea class="ckeditor" cols="80" name="entry" rows="10"></textarea>
+		<textarea class="ckeditor" cols="80" name="entry" rows="10"><?php echo $DATA["entry"]; ?></textarea>
 		<br><br>
         <input type = "submit" value = "Submit">
  		</form>
