@@ -99,6 +99,19 @@ tr.light
 background-color: transparent;
 }
 
+/* pre tag for code snippets */
+pre
+{
+border: 1px #cbcbcb solid;
+background-color: #efefef;
+width: 580px;
+margin: 5px;
+padding: 8px;
+font-family: courier;
+font-size: 12pt;
+overflow: auto;
+}
+
 
 /* big div */
 .all
