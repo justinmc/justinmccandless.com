@@ -36,7 +36,7 @@ if (is_dir($dir))
 		{
 			if (substr_count($file, "jpg") || substr_count($file, "JPG"))
 			{
-echo "<a href = \"$dirUrl$file\"><img src = \"magick.php?file=$dir$file?x=600?y=0\" width = \"600\" height = \"450\"></a>
+				echo "<a href = \"$dirUrl$file\"><img src = \"magick.php?file=$dir$file&x=600&y=0\" width = \"600\" height = \"450\"></a>
 						<br><a href = \"$dirUrl$file\">$file</a><br><br>\n";
 			}
 		}
@@ -49,5 +49,47 @@ else
 	echo "ERROR: Invalid directory\n";
 
 ?>
+<br><br><br><br>
 
+<?php
+
+$pics;
+$dirs;
+
+if (is_dir($dir))
+{
+    if ($dh = opendir($dir))
+	{
+		$i = 0;
+        while (($file = readdir($dh)) != false)
+		{
+			if ((filetype($dir . $file) != "dir") && ($file != ".") && ($file != "..") && (substr_count($file, "jpg") || substr_count($file, "JPG")))
+				$pics[$i] = $file;
+			else if ((filetype($dir . $file) == "dir") && ($file != ".") && ($file != ".."))
+				$dirs[$i] = $dirReq . $file;
+
+			$i++;
+		}
+	}
+}
+
+?>
+Dirs<br>
+<?php
+
+foreach ($dirs as $dir)
+{
+	echo  "<a href = \"" . $this->urlRoot . "/pictures.php?dir=$dir/\">$dir/</a><br>\n";
+}
+
+?>
+Pics<br>
+<?php
+foreach ($pics as $pic)
+{
+	echo "<a href = \"$dirReq$pic\"><img src = \"magick.php?file=$dirReq$pic&x=600&y=0\" width = \"600\" height = \"450\"></a>
+          <br><a href = \"$dirUrl$pic\">$pic</a><br><br>\n";
+}
+
+?>
         <br><br>
