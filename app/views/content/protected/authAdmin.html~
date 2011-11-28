@@ -3,30 +3,46 @@
 
 $entry = $_REQUEST["entry"];
 $name = $_REQUEST["name"];
+$type = $_REQUEST["type"];
 
-if ($name != "")
+if ($type == "tag")
 {
+	$id = $this->dbJmc->numRows('rel_entries_tags');
+	$idEntry = $_REQUEST["idEntry"];
+	$idTag = $_REQUEST["idTag"];
 
-	$date = $_REQUEST["date"];
-	$entryHtml = $_REQUEST["entryHtml"];
-	$modified = $_REQUEST["modified"];
-	$id = $_REQUEST["id"];
+	$query = "INSERT INTO rel_entries_tags VALUES ($id, $idEntry, $idTag);";
 
-	$entryHtml = str_replace("'", "\'", $entryHtml);
-
-	$query;
-	if ($_REQUEST["type"] == "insert")
-		$query = "INSERT INTO dat_entries VALUES ($id, '$name', '$date', '$modified', '$entryHtml');";
-	else
-		$query = "UPDATE dat_entries SET id = $id, title = '$name', date = '$date', dateEdit = '$modified', entry = '$entryHtml' WHERE id = $id";
-echo $query;
 	$this->dbJmc->query($query);
 
-	echo "<b style = \"color: green;\">Update Succeeded!</b>\n";
+	echo "<b style = \"color: green;\">Tag Succeeded!</b>\n";
 }
-if ($entry != "")
+else
 {
-	$DATA = $this->dbJmc->getRow("dat_entries", ($entry - 1));
+	if ($name != "")
+	{
+
+		$date = $_REQUEST["date"];
+		$entryHtml = $_REQUEST["entryHtml"];
+		$modified = $_REQUEST["modified"];
+		$id = $_REQUEST["id"];
+
+		$entryHtml = str_replace("'", "\'", $entryHtml);
+
+		$query;
+		if ($type == "insert")
+			$query = "INSERT INTO dat_entries VALUES ($id, '$name', '$date', '$modified', '$entryHtml');";
+		else
+			$query = "UPDATE dat_entries SET id = $id, title = '$name', date = '$date', dateEdit = '$modified', entry = '$entryHtml' WHERE id = $id";
+
+		$this->dbJmc->query($query);
+
+		echo "<b style = \"color: green;\">Update Succeeded!</b>\n";
+	}
+	if ($entry != "")
+	{
+		$DATA = $this->dbJmc->getRow("dat_entries", ($entry - 1));
+	}
 }
 
 ?>
@@ -49,5 +65,20 @@ if ($entry != "")
         <input type = "submit" value = "Submit">
  		</form>
 		<br><br>
+
+		<h2>Tag a Post</h2>
+		<form method = "post" action = "<?php echo $this->rootUrl; ?>/admin.php">
+		<input type = "hidden" id = "type" name = "type" value = "tag">
+		<br><br>
+		Post id:<br>
+		<input type = "text" id = "idEntry" name = "idEntry" value = "">
+		<br><br>
+		Tag id:<br>
+		<input type = "text" id = "idTag" name = "idTag" value = "">
+		<br><br>
+        <input type = "submit" value = "Submit">
+ 		</form>
+		<br><br>
+
 		<a href = "<?php echo $this->rootDir; ?>/admin.php?logout=1">Logout</a>
 		<br><br>
