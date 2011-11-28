@@ -30,8 +30,6 @@ $page = new Page($rootDir, $rootUrl, $filename, $_REQUEST["entry"], $_REQUEST["t
 
 <title><?php echo $page->title; ?></title>
 <link REL="SHORTCUT ICON" href="<?php echo $rootUrl; ?>/images/favicon.ico">
-<!-- <link rel="alternate" type="application/rss+xml" title="All RSS" href="http://justinmccandless.com/feeds/rss.xml" /> -->
-<!-- <link rel="alternate" type="application/rss+xml" title="All Atom" href="http://justinmccandless.com/feeds/atom.xml" /> -->
 <?php
 
 $isPost;	// if this page is a post, need date and comments
@@ -72,12 +70,12 @@ google_ad_height = 150;
 <div class = "all">
 	<div class = "decCornerTop"></div>
     <img src = "<?php echo $rootUrl; ?>/images/titleSuits.png" style = "position: absolute; top: -10px; right: 64px;">
-    <a href = "index.php"><h1 style = "position: relative; top: -10px; left: 0px;">Justin John McCandless</h1></a>
+    <a class = "h1" href = "index.php"><h1 style = "position: relative; top: -10px; left: 0px;">Justin John McCandless</h1></a>
     <ul class = "nav" style = "position: relative; top: -20px; left: 0px;">
     <li><a href = "index.php">Home</a>
     <li><a href = "about.php">About</a>
     <li><a href = "projects.php">Projects</a>
-	<li><a href = "projects.php">Pictures</a
+<!--	<li><a href = "pictures.php">Pictures</a> -->
     <li><a href = "archive.php">Archive</a>
     </ul>
     <div class = "news">
