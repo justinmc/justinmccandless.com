@@ -15,43 +15,10 @@ if ($dirReq)
 $dirUrl = $this->rootUrl . substr($dir, (strlen($this->dirRoot) + 7), (strlen($dir) - strlen($this->dirRoot)));
 
 echo "<p>Current Directory:<br>\n";
-echo "/$dirReq</p><br><br>\n";
+echo "/$dirReq</p><br>\n";
 
-if ($dir != $dirReq)
-	echo "<a href = \"" . $this->urlRoot . "/pictures.php?dir=" . $this->dirUp($dirReq) . "\">Go Back</a><br><br>\n";
-if (is_dir($dir))
-{
-    if ($dh = opendir($dir))
-	{
-        while (($file = readdir($dh)) != false)
-		{
-			if ((filetype($dir . $file) == "dir") && ($file != ".") && ($file != ".."))
-				echo "<a href = \"" . $this->urlRoot . "/pictures.php?dir=$dirReq$file/\">$file/</a><br>";
-        }
-        closedir($dh);
-		echo "<br><br>\n";
-		$dh = opendir($dir);
-
-        while (($file = readdir($dh)) != false)
-		{
-			if (substr_count($file, "jpg") || substr_count($file, "JPG"))
-			{
-				echo "<a href = \"$dirUrl$file\"><img src = \"magick.php?file=$dir$file&x=600&y=0\" width = \"600\" height = \"450\"></a>
-						<br><a href = \"$dirUrl$file\">$file</a><br><br>\n";
-			}
-		}
-
-        closedir($dh);
-
-	}
-}
-else
-	echo "ERROR: Invalid directory\n";
-
-?>
-<br><br><br><br>
-
-<?php
+if ($dirReq != "")
+	echo "<a href = \"" . $this->urlRoot . "/pictures.php?dir=" . $this->dirUp($dirReq) . "\">Go Back</a><br><br><br>\n";
 
 $pics;
 $dirs;
@@ -72,10 +39,8 @@ if (is_dir($dir))
 		}
 	}
 }
-
-?>
-Dirs<br>
-<?php
+else
+	echo "ERROR: Invalid directory\n";
 
 foreach ($dirs as $dir)
 {
@@ -83,11 +48,11 @@ foreach ($dirs as $dir)
 }
 
 ?>
-Pics<br>
+<br>
 <?php
 foreach ($pics as $pic)
 {
-	echo "<a href = \"$dirUrl$pic\"><img src = \"magick.php?file=$dirReq$pic&x=600&y=0\" width = \"600\" height = \"450\"></a>
+	echo "<a href = \"$dirUrl$pic\"><img src = \"magick.php?file=$dir$pic&x=600&y=0\" width = \"600\" height = \"450\"></a>
           <br><a href = \"$dirUrl$pic\">$pic</a><br><br>\n";
 }
 
