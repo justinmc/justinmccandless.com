@@ -130,6 +130,50 @@ background-color: #ffffff;
 	width: 128px; height: 128px;
 	}
 
+	/* Specifically for RankForm */
+	/* up button */
+	b.up
+	{
+			cursor: pointer;
+			float: right;
+	}
+	b.up:hover {color: #ffc741;}
+
+	/* down button */
+	b.down
+	{
+			cursor: pointer;
+			float: right;
+	}
+	b.down:hover {color: #ffc741;}
+
+	/* shows the rank of the element */
+	font.rankDisp
+	{
+			position: absolute;
+			color: #ffc741;
+	}
+
+	/* Container div for Rank, HTML form rank selector */
+	.rankContainer
+	{
+			position: relative;
+			width: 412px; height: auto;
+			border: 1px #645c56 solid;
+			padding: 8px;
+	}
+
+	/* Rankable element div for Rank, HTML form rank  */
+	.rankElement
+	{
+			position: relative;
+			width: 400px; height: auto;
+			margin: 3px;
+			padding: 3px;
+			background: #645c56;
+			color: #ffffff;
+	}
+
 /************************************************** Navbar ****************************************************/
 
 
@@ -151,4 +195,3 @@ text-decoration: none;
 font-weight: bold;
 }
 ul.nav li a:hover {color: #d40000;}
-
