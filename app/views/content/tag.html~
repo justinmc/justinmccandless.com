@@ -1,1 +1,0 @@
-		<a href = "tags.php?tag=<?php echo $DATA["tag"]; ?>"><?php echo $DATA["tag"]; ?></a><br>
