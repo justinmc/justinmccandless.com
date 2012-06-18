@@ -31,4 +31,27 @@ App::uses('Model', 'Model');
  * @package       app.Model
  */
 class AppModel extends Model {
+	
+	// returns the next id that should be used on an insert into the table
+	public function getNextId () {
+		$highest = $this->find('all', array('fields' => 'MAX(id)'));
+		
+		return (($highest[0][0]['MAX(id)'] == NULL) ? 0 : $highest[0][0]['MAX(id)'] + 1);
+	}
+	
+	// Form validation function to match fields (password and confirm password)
+	function identicalFieldValues( $field=array(), $compare_field=null ) 
+    {
+        foreach( $field as $key => $value ){
+            $v1 = $value;
+            $v2 = $this->data[$this->name][ $compare_field ];                 
+            if($v1 !== $v2) {
+                return FALSE;
+            } else {
+                continue;
+            }
+        }
+        return TRUE;
+    } 
+	
 }
