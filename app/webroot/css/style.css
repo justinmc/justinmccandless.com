@@ -17,7 +17,7 @@
 
 /** General Style Info **/
 body {
-	background: #EAE1E1;
+	background: url('/img/background.png');
 	color: #fff;
 	font-family:'lucida grande',verdana,helvetica,arial,sans-serif,534E\6587\9ED1\4F53;
 	font-size:90%;
@@ -74,8 +74,8 @@ p {
 	position: relative;
 }
 #header_bg {
-	background: #e1e1e1;
     height: 80px;
+	background: url('/img/background_header.png');
     position: fixed;
     text-align: center;
     top: 0;
@@ -133,7 +133,7 @@ p {
 	text-align: left;
 }
 #footer_bg {
-    background: none repeat scroll 0 0 #e1e1e1;
+    background: url('/img/background_header.png');
     position: relative;
     width: 100%;
 }
@@ -907,14 +907,6 @@ min-height: 1450px;
 background-color: #ffffff;
 }
 
-	/* top card corner decoration div */
-	.decCornerTop
-	{
-	background-image: url('../images/backPageRoundLong.png');
-	position: absolute; top: -30px; left: 0px;
-	width: 100%; height: 128px;
-	}
-
 	/* holds recent post links */
 	.news
 	{
@@ -971,6 +963,10 @@ background-color: #ffffff;
 	background-color: white;
 	z-index: 1;
 	}
+	
+		div.centerme {
+			text-align: center;
+		}
 
 	/* bottom card corner decoration div */
 	.decCornerBot

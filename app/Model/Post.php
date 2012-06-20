@@ -85,8 +85,6 @@ class Post extends AppModel {
 						'titlepic' => $unformatted['titlepic'], 
 						'post' => $unformatted['post'],
 						'post_intro' => $unformatted['post_intro']);
-			
-				die(var_export($formatted));
 		}
 		else {
 			$formatted = array('id' => $unformatted['id'],

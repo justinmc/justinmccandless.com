@@ -10,11 +10,12 @@
 	<?php echo $post['Post']['post_intro']; ?>
 </p>
 <a href="<?= $this->Html->url('/blog/' . urlencode($post['Post']['title'])) ?>">Read</a>
+<a style="float: right;" href="<?= $this->Html->url('/blog/' . urlencode($post['Post']['title'])) ?>#disqus_thread"></a>
 <br /><br /><br /><br />
 <?php endforeach; ?>
-<br />
+<br /><br />
 <div class="centerme">
-	<?= $this->Paginator->first() ?>
+	<span style="float: left;"><?= $this->Paginator->prev() ?></span>
 	<?= $this->Paginator->numbers() ?>
-	<?= $this->Paginator->last() ?>
+	<span style="float: right;"><?= $this->Paginator->next() ?></span>
 </div>

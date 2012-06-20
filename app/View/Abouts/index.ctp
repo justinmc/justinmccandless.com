@@ -1,4 +1,4 @@
-<h2>About</h2>
+<h2>About Me</h2>
 <img src="<?= $this->Html->url('/img/justinLlama.jpg'); ?>" style = "float: right; padding: 8px;" title = "I'm at least this awesome in real life">
 <p>
 I'm a recent electrical engineering graduate from the University of Michigan originally from Las Vegas.  I'm
