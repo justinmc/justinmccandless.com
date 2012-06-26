@@ -31,6 +31,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		echo $this->Html->css('style');
 		echo $this->Html->css('lightbox');
 		echo $this->Html->css('/js/redactor/css/redactor');
+		echo $this->Html->css('http://fonts.googleapis.com/css?family=Bowlby+One+SC');
 
 		echo $this->Html->script('http://code.jquery.com/jquery-1.7.2.min.js');
 		echo $this->Html->script('lightbox');
@@ -94,14 +95,15 @@ google_ad_height = 150;
 			<div id="header">
 				<br />
 				<div class = "decCornerTop"></div>
-			    <img src="/img/titleSuits.png" style="position: absolute; top: 10px; right: 64px;">
+			    <!--<img src="/img/titleSuitsBlack.png" style="position: absolute; top: 10px; right: 64px;"> -->
+			    <h1 id="header_logo">&clubs;&diams;&spades;&hearts;</h1>
 			    <a class = "h1" href = "<?= $this->Html->url('/'); ?>"><h1 style = "position: relative; top: -10px; left: 0px;">Justin McCandless</h1></a>
-			    <ul class = "nav" style="position: relative; top: -12px; left: 0px;">
-				    <li><a href = "<?= $this->Html->url('/'); ?>">Home</a>
-				    <li><a href="<?= $this->Html->url('/about/'); ?>">About</a>
-				    <li><a href = "<?= $this->Html->url('/projects/'); ?>">Projects</a>
-					<li><a href = "<?= $this->Html->url('/photos/'); ?>">Albums</a>
-				    <li><a href = "<?= $this->Html->url('/archive/'); ?>">Archive</a>
+			    <ul class = "nav">
+				    <li class="neon1"><a href = "<?= $this->Html->url('/'); ?>">Home</a>
+				    <li class="neon2"><a href="<?= $this->Html->url('/about/'); ?>">About</a>
+				    <li class="neon3"><a href = "<?= $this->Html->url('/projects/'); ?>">Projects</a>
+					<li class="neon4"><a href = "<?= $this->Html->url('/photos/'); ?>">Albums</a>
+				    <li class="neon5"><a href = "<?= $this->Html->url('/archive/'); ?>">Archive</a>
 					<?php if ($this->Session->read('Auth.User')): ?>
 					<li><a href="<?= $this->Html->url('/admin/'); ?>">Admin</a></li>
 					<li><a href="<?= $this->Html->url('/users/logout/'); ?>">Logout</a></li>
@@ -132,6 +134,7 @@ google_ad_height = 150;
 					<script type="text/javascript"
 						src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 					</script>
+					<br clear="all" /><br />
 				</div>
 			</div>
 		</div>

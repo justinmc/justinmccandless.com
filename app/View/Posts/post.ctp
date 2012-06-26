@@ -1,6 +1,6 @@
 <?php if ($post): ?>
-<a href="/blog/<?php echo $post['Post']['title']; ?>"><h3><?php echo $post['Post']['title']; ?></h3></a>
-<a href="/blog/<?php echo $post['Post']['title']; ?>"><img src="<?= $this->Html->url('/' . $post['Post']['titlepic']) ?>" width="800" /></a>
+<a href="/blog/<?php echo urlencode($post['Post']['title']); ?>"><h3><?php echo $post['Post']['title']; ?></h3></a>
+<a href="/blog/<?php echo urlencode($post['Post']['title']); ?>"><img style="max-width: 800px;" src="<?= $this->Html->url('/' . $post['Post']['titlepic']) ?>" /></a>
 <br />
 <i>Posted: <?php echo $this->Time->nice($post['Post']['date']); ?></i>
 <br /><br />
