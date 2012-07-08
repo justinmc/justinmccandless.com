@@ -28,6 +28,7 @@ class PostsController extends AppController {
 	}
 	
 	public function post($title) {
+
 		$this->layout = 'home';
 		
 		$post = $this->Post->find('first', array(
@@ -37,6 +38,40 @@ class PostsController extends AppController {
 			));
 		
 		$this->set('post', $post);
+	}
+	
+	// If a url comes in looking for posts via number (the old way), look up the title and send them to the right place
+	public function postDeprecatedParam() {
+		$postNum = $this->params->query['entry'];
+		$postId = $postNum - 1;
+		
+		$this->postDeprecated($postId);
+	}
+	public function postDeprecatedNumPhp() {
+		$postNum = $this->params['pass'][0];
+		$postNum = substr($postNum, 0, strpos($postNum, '.'));
+		$postId = $postNum - 1;
+		
+		$this->postDeprecated($postId);
+	}
+	public function postDeprecatedNumHtml() {
+		$postNum = $this->params->url;
+		$postNum = substr($postNum, 0, strpos($postNum, '.'));
+		$postId = $postNum - 1;
+		
+		$this->postDeprecated($postId);
+	}
+	public function postDeprecated($postId) {
+		
+		$this->loadModel('Post');
+		$postTitle = $this->Post->find('first', array(
+			'conditions' => array(
+				'id' => $postId
+			),
+			'fields' => 'title'
+		));
+
+		$this->redirect(array('controller' => 'posts', 'action' => 'post', urlencode($postTitle['Post']['title'])));
 	}
 	
 	public function archive() {
