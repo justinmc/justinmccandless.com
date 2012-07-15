@@ -23,8 +23,10 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
-		The Blog of Justin McCandless
+		<?php if(isset($description_for_layout)){ echo $title_for_layout . ' - '; } ?> Justin McCandless
 	</title>
+	<?php if(isset($description_for_layout)){ echo "<meta name='description' content='".$description_for_layout."' />"; } ?>
+	<meta name="keywords" content="Justin McCandless, blog, technology, entrepreneurship, startup, travel, China, Ecuador, Peru, Austria " />
 	<?php
 		echo $this->Html->meta('icon');
 	
@@ -95,8 +97,7 @@ google_ad_height = 150;
 			<div id="header">
 				<br />
 				<div class = "decCornerTop"></div>
-			    <!--<img src="/img/titleSuitsBlack.png" style="position: absolute; top: 10px; right: 64px;"> -->
-			    <h1 id="header_logo">&clubs;&diams;&spades;&hearts;</h1>
+			    <a class = "h1" href = "<?= $this->Html->url('/'); ?>"><img src="<?= $this->Html->url('/img/vegas.png'); ?>" style="position: absolute; top: 12px; right: 54px;"></a>
 			    <a class = "h1" href = "<?= $this->Html->url('/'); ?>"><h1 style = "position: relative; top: -10px; left: 0px;">Justin McCandless</h1></a>
 			    <ul class = "nav">
 				    <li class="neon1"><a href = "<?= $this->Html->url('/'); ?>">Home</a>

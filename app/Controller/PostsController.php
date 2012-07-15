@@ -21,6 +21,8 @@ class PostsController extends AppController {
 	
 	public function index() {
 	    $this->layout = 'home';
+		$this->set('title_for_layout', 'My Blog');
+		$this->set('description_for_layout', 'The personal blog of Justin McCandless - comments on technology and my travels');
 		
 		$posts = $this->paginate(); // $this->Post->findNotDeleted(array('id', 'title', 'date', 'titlepic', 'post'));
 		
@@ -28,14 +30,16 @@ class PostsController extends AppController {
 	}
 	
 	public function post($title) {
-
 		$this->layout = 'home';
+		$this->set('description_for_layout', ('Full permanent post of: ' . $post['Post']['title']));
 		
 		$post = $this->Post->find('first', array(
 			'conditions' => array(
 				'title' => urldecode($title)
 				)
 			));
+
+		$this->set('title_for_layout', $post['Post']['title']);
 		
 		$this->set('post', $post);
 	}
@@ -76,6 +80,8 @@ class PostsController extends AppController {
 	
 	public function archive() {
 		$this->layout = 'home';
+		$this->set('title_for_layout', 'Post Archive');
+		$this->set('description_for_layout', 'Archive of all posts on the blog');
 		
 		$posts = $this->Post->findNotDeleted(array('id', 'title', 'date'));
 		

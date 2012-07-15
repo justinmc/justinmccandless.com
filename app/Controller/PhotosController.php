@@ -6,6 +6,8 @@ class PhotosController extends AppController {
 	
 	public function index() {
 	    $this->layout = 'home';
+		$this->set('title_for_layout', 'Pictures');
+		$this->set('description_for_layout', 'List of all picture albums');
 		$this->loadModel('Photo');
 
 		$conn = $this->Photo->connect();
@@ -16,6 +18,8 @@ class PhotosController extends AppController {
 	
 	public function album($album) {
 		$this->layout = 'home';
+		$this->set('title_for_layout', ($title . ' - Pictures'));
+		$this->set('description_for_layout', ('All pictures in the album ' . $title));
 		$this->loadModel('Photo');
 		
 		$conn = $this->Photo->connect();
