@@ -756,8 +756,12 @@ font-size: 12pt;
 overflow: auto;
 }
 
-
-
+/* code snippets inline */
+span.code {
+	border: 1px #cbcbcb solid;
+	background: #efefef;
+	font-size: 85%;
+}
 
 ul, li {
 	margin:0;

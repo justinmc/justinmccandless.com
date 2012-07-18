@@ -31,7 +31,6 @@ class PostsController extends AppController {
 	
 	public function post($title) {
 		$this->layout = 'home';
-		$this->set('description_for_layout', ('Full permanent post of: ' . $post['Post']['title']));
 		
 		$post = $this->Post->find('first', array(
 			'conditions' => array(
@@ -40,6 +39,7 @@ class PostsController extends AppController {
 			));
 
 		$this->set('title_for_layout', $post['Post']['title']);
+		$this->set('description_for_layout', ('Full permanent post of: ' . $post['Post']['title']));
 		
 		$this->set('post', $post);
 	}
