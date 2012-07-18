@@ -87,4 +87,10 @@ class PostsController extends AppController {
 		
 		$this->set('posts', $posts);
 	}
+	
+	/*public function search() {
+		$this->layout = 'home';
+		$this->set('title_for_layout', 'Post Search');
+		$this->set('description_for_layout', 'Search all posts on the blog');
+	}*/
 }
