@@ -14,17 +14,6 @@
 </div>
 <!-- Facebook Like -->
 <div class="fb-like" style = "float: right" data-send="false" data-layout="button_count" data-width="120" data-show-faces="false" data-font="verdana"></div>
-<?php else: ?>
-<h2>没有找到该页面 Post Not Found</h2>
-<p>
-	对不起，没有找到您填写的地址。
-<br/>
-	Sorry!  The url you entered doesn't seem to be a valid post.
-</p>
-<p>
-	<?php echo $this->Html->link('主页 Home', '/'); ?>
-</p>
-<?php endif; ?>
 <br /><br />
 <!-- Disqus -->
 <div id="disqus_thread"></div>
@@ -40,3 +29,12 @@
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 <!-- End Disqus -->
+<?php else: ?>
+<h2>Post Not Found</h2>
+<p>
+	Sorry!  The url you entered doesn't seem to be a valid post.
+</p>
+<p>
+	<?php echo $this->Html->link('Home', '/'); ?>
+</p>
+<?php endif; ?>
