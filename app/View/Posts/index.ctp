@@ -1,5 +1,5 @@
 <?php foreach($posts as $post): ?>
-<a class="content_postTitle" href="<?= $this->Html->url('/blog/' . urlencode('Correctly Fading in/out onmouseover Using jQuery', ENT_QUOTES, "UTF-8")) ?>"><h3><?php echo $post['Post']['title']; ?></h3></a>
+<a class="content_postTitle" href="<?= $this->Html->url('/blog/' . urlencode($post['Post']['title'])) ?>"><h3><?php echo $post['Post']['title']; ?></h3></a>
 <a class="content_postPic" href="<?= $this->Html->url('/blog/' . urlencode($post['Post']['title'])) ?>"><img src="<?= $this->Html->url('/' . $post['Post']['titlepic']) ?>" /></a>
 <br />
 <div class="post">
