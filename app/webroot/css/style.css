@@ -699,6 +699,13 @@ h3 {
 	font-size: 165%;
 	text-decoration: none;
 }
+
+h4 {
+	color: #000000;
+    font-weight: normal;
+    font-size: 150%;
+}
+
 a h3 {
 	text-decoration: none;
 }
