@@ -70,9 +70,6 @@ class Post extends AppModel {
 
 	// Takes an array of form data, formats it for db entry
 	private function formatPost ($unformatted) {
-		$unformatted['title'] = addslashes($unformatted['title']);
-		$unformatted['post'] = addslashes($unformatted['post']);
-		$unformatted['post_intro'] = addslashes($unformatted['post_intro']);
 		if (!isset($unformatted['titlepic']))
 			$unformatted['titlepic'] = '';
 		

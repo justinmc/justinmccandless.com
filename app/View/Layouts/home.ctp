@@ -103,7 +103,7 @@ google_ad_height = 150;
 				    <li class="neon1"><a href = "<?= $this->Html->url('/'); ?>">Home</a>
 				    <li class="neon2"><a href="<?= $this->Html->url('/about/'); ?>">About</a>
 				    <li class="neon3"><a href = "<?= $this->Html->url('/projects/'); ?>">Projects</a>
-					<li class="neon4"><a href = "<?= $this->Html->url('/photos/'); ?>">Albums</a>
+					<li class="neon4"><a href = "<?= $this->Html->url('/photos/'); ?>">Pictures</a>
 				    <li class="neon5"><a href = "<?= $this->Html->url('/archive/'); ?>">Archive</a>
 					<?php if ($this->Session->read('Auth.User')): ?>
 					<li><a href="<?= $this->Html->url('/admin/'); ?>">Admin</a></li>
