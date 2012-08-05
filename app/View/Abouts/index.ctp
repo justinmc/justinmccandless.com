@@ -1,5 +1,9 @@
 <h2>About Me</h2>
-<img src="<?= $this->Html->url('/img/justinLlama.jpg'); ?>" style = "float: right; padding: 8px;" title = "I'm at least this awesome in real life">
+<div style="float: right; padding: 8px;">
+	<img src="<?= $this->Html->url('/img/justinLlama.jpg'); ?>" title = "I'm at least this awesome in real life">
+	<br /><br />
+	<a href="https://plus.google.com/101532221547292067981?rel=author"><img src="/img/googleplus.jpg" /></a>
+</div>
 <p>
 I'm a recent electrical engineering graduate from the University of Michigan originally from Las Vegas.  I'm
 currently living in Beijing where I work as a software engineering intern for 

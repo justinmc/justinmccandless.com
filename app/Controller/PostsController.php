@@ -21,7 +21,7 @@ class PostsController extends AppController {
 	
 	public function index() {
 	    $this->layout = 'home';
-		$this->set('title_for_layout', 'My Blog');
+		$this->set('title_for_layout', 'Tech, Coding, and Travel');
 		$this->set('description_for_layout', 'The personal blog of Justin McCandless - comments on technology and my travels');
 		
 		$posts = $this->paginate(); // $this->Post->findNotDeleted(array('id', 'title', 'date', 'titlepic', 'post'));
