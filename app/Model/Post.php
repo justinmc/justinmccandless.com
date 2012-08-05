@@ -24,8 +24,8 @@ class Post extends AppModel {
 	// returns 1 on success, 0 on failure
 	public function edit ($formdata) {		
 		$dbdata = $this->formatPost($formdata);
-		
-        if ($this->updateAll($dbdata, array('id' => $formdata['id']))) {	
+
+        if ($this->save($dbdata)) {	
             return 1;
         }
 		else {
@@ -70,27 +70,15 @@ class Post extends AppModel {
 
 	// Takes an array of form data, formats it for db entry
 	private function formatPost ($unformatted) {
+		// No title pic should be an empty string
 		if (!isset($unformatted['titlepic']))
 			$unformatted['titlepic'] = '';
-		
-		// Must have apostrophes on strings if we're editing, otherwise just make sure date is an int
-		$formatted;
+
+		// format date if needed
 		if ($unformatted['id'] == $this->getNextId()) {
-			$formatted = array('id' => $unformatted['id'],
-						'title' => $unformatted['title'],
-						'date' => intval($unformatted['date']), 
-						'titlepic' => $unformatted['titlepic'], 
-						'post' => $unformatted['post'],
-						'post_intro' => $unformatted['post_intro']);
+			$unformatted['date'] = intval($unformatted['date']);
 		}
-		else {
-			$formatted = array('id' => $unformatted['id'],
-						'title' => "'{$unformatted['title']}'",
-						'titlepic' => "'{$unformatted['titlepic']}'", 
-						'post' => ("'{$unformatted['post']}'"),
-						'post_intro' => ("'{$unformatted['post_intro']}'"));
-		}
-						
-		return $formatted;
+
+		return $unformatted;
 	}
 }
