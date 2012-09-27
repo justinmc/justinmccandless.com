@@ -19,9 +19,14 @@
 	I'm currently working for this Beijing startup, doing HTML5 mobile development and web development.  Check out <a href="http://www.smartots.com">smartots.com</a> to see what we're about.  
 </p>
 <br /><br />
+<h4>Multitasq, A new way to visualize to-do, coming soon</h4>
+<p>
+	An HTML5 app I've been working on as a side project.  Uses SVG, backbone.js, and trees...
+</p>
+<br /><br />
 <h4>Database Syncronization, Telefonica of Peru</h4>
 <p>
-	I optimized the syncronization of Telefonica's South American Oracle internal software bug database to Peru, and wrote a report generating app for it using .Net.  This was during my stint interning in Telefonica's Lima branch just after graduation, in the Software Project Management office.
+	I optimized the syncronization of Telefonica's South American Oracle internal software bug database to Peru, and wrote a report generating webapp for it using .Net.  This was during my stint interning in Telefonica's Lima branch just after graduation, in the Software Project Management office.
 </p>
 <br /><br />
 <h4>AIESEC Global Brand Audit, International Research and Development Global Support Team</h4>
@@ -35,7 +40,7 @@
 <p class = "softwareLink">Source: <a href = "http://github.com/justinmc/Rank-Form">github.com/justinmc/Rank-Form</a></p>
 <br />
 <p>
-	I ran into the need to let users rank selections in an HTML form, and I wound up creating this nice side project.  It animates choices nicely and intuitively into place as users rank them, and sits smoothly on top of a hidden HTML form input.
+	I ran into the need to let users rank selections in an HTML form, and I wound up creating this side project.  It animates choices nicely and intuitively into place as users rank them, and sits smoothly on top of a hidden HTML form input.
 </p>
 <br /><br />
 <h4>Out of Order P6 Processor in Verilog</h4>
@@ -86,7 +91,7 @@ of the team to help put content on the pages.
 <br />
 <p>
 A simple side scrolling jQuery title bar like the ones you see on many websites.  Developed for aiesecmichigan.com
-and then turned into its own project.  Also have a vanilla javascript version.
+and then turned into its own project.  Also has a vanilla javascript version.
 </p>
 <br><br>
 <h4>Bertacco Lab's Website</h4>
@@ -111,4 +116,10 @@ I developed and ran this mouse drawn, MS Paint style webcomic for a year or so i
 A website I developed while working at this ecologic nonprofit in Ecuador for a summer.  I wrote a PHP content management system to allow
 updates and changes to be made in as simple a manner as possible, without the need for technical staff or other resources to maintain the site.
 </p>
-
+<br><br>
+<h4>The Electronics Handyman</h4>
+<p class = "softwareLink">Live: <s><a href = "http://www.theelectronicshandyman.com/">theelectronicshandyman.com</a></s></p>
+<br />
+<p>
+Applied for a business license, set up a website, and spent the summer running this business fixing customers' computers and other home electronics back during university.
+</p>
