@@ -15,6 +15,7 @@
 <br /><br /><br /><br />
 
 <?php if ($count == 0): ?>
+<!-- Google Adsense between ads -->
 <script type="text/javascript"><!--
 google_ad_client = "ca-pub-2475745093547689";
 /* Between Article */
@@ -32,7 +33,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <?php endforeach; ?>
 <br /><br />
 <div class="centerme">
-	<span style="float: left;"><?= $this->Paginator->prev() ?></span>
-	<?= $this->Paginator->numbers() ?>
-	<span style="float: right;"><?= $this->Paginator->next() ?></span>
+	<span style="float: left;"><?= $this->Paginator->prev('<< Newer', array(), ' ') ?></span>
+	<?= $this->Paginator->numbers(array('separator' => '&nbsp;&nbsp;&nbsp;&nbsp;')); ?>
+	<span style="float: right;"><?= $this->Paginator->next('Older >>', array(), ' ') ?></span>
 </div>
