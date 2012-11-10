@@ -827,7 +827,6 @@ h1#header_logo {
 }
 #rightbar_fixed {
     position: fixed;
-    width: 100%;
 }
 #container_center {
     clear: both;

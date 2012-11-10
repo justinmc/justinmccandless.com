@@ -119,7 +119,7 @@ google_ad_height = 150;
 				<?php echo $this->fetch('content'); ?>
 			</div>
 			<div id="rightbar">
-				<div id="fixed">
+				<div id="rightbar_fixed">
 					<!-- Begin Google Custom Search -->        
 					<!--
 					<div id="cse" style="width: 100%;">Loading</div>
