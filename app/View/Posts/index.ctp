@@ -46,7 +46,7 @@ google_ad_height = 90;
 <script type="text/javascript"
 src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
-<br /><br />
+<br /><br /><br /><br />
 
 <div class="centerme">
 	<span style="float: left;"><?= $this->Paginator->prev('<< Newer', array(), ' ') ?></span>
