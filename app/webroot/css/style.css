@@ -823,11 +823,11 @@ h1#header_logo {
     float: left;
     height: auto;
     padding: 8px;
-    width: 12%;
+    width: 20%;
 }
 #rightbar_fixed {
     position: fixed;
-    width: 100%;
+    width: inherit;
 }
 #container_center {
     clear: both;
@@ -839,7 +839,7 @@ h1#header_logo {
 }
 #content{
 	background: #FFFFFF;
-	width: 80%;
+	width: 73%;
 	float: left;
 	clear: both;
 	color: #333;
