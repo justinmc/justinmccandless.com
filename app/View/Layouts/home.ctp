@@ -289,7 +289,7 @@ google_ad_height = 150;
 					<!-- Twitter Feed -->
 					<a class="twitter-timeline"  href="https://twitter.com/justinjmcc" data-widget-id="264616093967056896">Tweets by @justinjmcc</a>
 					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
+					<br clear="all" /><br />
 					
 					<!-- Google Adsense -->
 					<script type="text/javascript"
