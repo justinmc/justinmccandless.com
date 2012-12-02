@@ -14,34 +14,10 @@
 <a style="float: right;" href="<?= $this->Html->url('/blog/' . urlencode($post['Post']['title'])) ?>#disqus_thread"></a>
 <br /><br /><br /><br />
 
-<?php if (($count == 0) && (count($posts) > 1)): ?>
-<!-- Google Adsense between posts -->
-<script type="text/javascript"><!--
-google_ad_client = "ca-pub-2475745093547689";
-/* Between Article */
-google_ad_slot = "6170359755";
-google_ad_width = 336;
-google_ad_height = 280;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
-<br /><br /><br /><br />
-<?php endif; ?>
-
 <?php $count++; ?>
 <?php endforeach; ?>
 <br /><br />
 
-<!-- Google Adsense after posts -->
-<script type="text/javascript"><!--
-google_ad_client = "ca-pub-2475745093547689";
-/* Above page nav */
-google_ad_slot = "2848197588";
-google_ad_width = 728;
-google_ad_height = 90;
-//-->
 </script>
 <script type="text/javascript"
 src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
