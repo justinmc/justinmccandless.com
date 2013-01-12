@@ -19,9 +19,14 @@
 	I'm currently working for this Beijing startup, doing HTML5 mobile development and web development.  Check out <a href="http://www.smartots.com">smartots.com</a> to see what we're about.  
 </p>
 <br /><br />
-<h4>Multitasq, A new way to visualize to-do, coming soon</h4>
+<h4>Multitasq, A reimagination of the todo list</h4>
+<p class="softwareLink">Post: <a href="http://www.justinmccandless.com/blog/Introducing+Multitasq">justinmccandless.com/blog/Introducing+Multitasq</a></p>
+<p class = "softwareLink">Live: <a href="http://www.multitasq.com">multitasq.com</a></p>
+<p class = "softwareLink">Mozilla Demo: <a href="https://developer.mozilla.org/en-US/demos/detail/multitasq">developer.mozilla.org/en-US/demos/detail/multitasq</a></p>
+<p class = "softwareLink">Source: <a href="http://github.com/justinmc/multitasq">github.com/justinmc/multitasq</a></p>
+<br />
 <p>
-	An HTML5 app I've been working on as a side project.  Uses SVG, backbone.js, and trees...
+	Ditching the idea of a glorified paper task list, this project aims to model how people truly get stuff done: in a hierarchy of constantly changing, expanding, and contracting ideas. It was built on the scalability of SVG to let the user step back and see the big picture as easily as they can focus down on the tiniest detail.  It's an open source side project that I develop and avidly use myself.
 </p>
 <br /><br />
 <h4>Database Syncronization, Telefonica of Peru</h4>
