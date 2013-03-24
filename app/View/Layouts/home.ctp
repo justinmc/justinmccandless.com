@@ -293,16 +293,16 @@ google_ad_height = 150;
 					
 					<!-- Google Adsense -->
 					<script type="text/javascript"><!--
-					google_ad_client = "ca-pub-2475745093547689";
-					/* 180&#42;150 small retangle */
-					google_ad_slot = "8421616956";
-					google_ad_width = 180;
-					google_ad_height = 150;
-					//-->
-					</script>
-					<script type="text/javascript"
-					src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-					</script>
+                    google_ad_client = "ca-pub-2475745093547689";
+                    /* Wide (Bella made me do this) */
+                    google_ad_slot = "3201290884";
+                    google_ad_width = 336;
+                    google_ad_height = 280;
+                    //-->
+                    </script>
+                    <script type="text/javascript"
+                    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                    </script>
 					<br clear="all" /><br />
 					
 					<!-- Hidden Google + link for authorship -->
@@ -313,7 +313,7 @@ google_ad_height = 150;
 		</div>
 		<div id="footer_bg">
 			<div id="footer">
-				<p> content copyright Justin McCandless 2012 </p>
+				<p> content copyright Justin McCandless <?= date('Y') ?> </p>
 			    <p> design and code <a href = "http://www.github.com/justinmc/justinmccandless.com">open source</a> </p>
 			</div>
 		</div>
