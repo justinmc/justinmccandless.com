@@ -828,6 +828,7 @@ h1#header_logo {
 #rightbar_fixed {
     position: fixed;
     width: inherit;
+    overflow: visible;
 }
 #container_center {
     clear: both;
