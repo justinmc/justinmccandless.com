@@ -40,7 +40,10 @@
 	</table>
 	<textarea class="redactor_content" name="post_intro">Post - Before the break</textarea>
 	<br />
-	<textarea class="redactor_content" name="post">Post - After the break</textarea>
+	<textarea class="mdhtmlform-md">Post - After the break</textarea>
+	<textarea class="mdhtmlform-html" name="post" style="display: none;"></textarea>
+	<br />
+  <div class="mdhtmlform-html"></div>
 	<br />
 	<input type="submit" value="提交 Submit" />
 	<br /><br />

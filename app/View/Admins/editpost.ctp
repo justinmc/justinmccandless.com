@@ -1,6 +1,6 @@
 <h2>编辑博客 Edit Post</h2>
 <br />
-<form name="addPost" action="<?= $this->Html->url('/admin/postsedit/') ?>" method="post" enctype="multipart/form-data">
+<form name="addPost" class="mdhtmlform" action="<?= $this->Html->url('/admin/postsedit/') ?>" method="post" enctype="multipart/form-data">
 	<table>
 	<tbody>
 		<tr>
@@ -22,7 +22,7 @@
 		</tr>
 		<tr>
 			<td>
-				中文题目 Chinese Title:
+				题目 Title:
 			</td>
 			<td>
 				<input type="text" name="title" value="<? echo $post['Post']['title']; ?>" />
@@ -41,19 +41,14 @@
 		</tr>
 	</tbody>
 	</table>
-	<textarea class="redactor_content" name="post_intro"><? echo $post['Post']['post_intro']; ?></textarea>
+	<textarea><? echo $post['Post']['post_intro']; ?></textarea>
 	<br />
-	<textarea class="redactor_content" name="post"><? echo $post['Post']['post']; ?></textarea>
+	<textarea class="mdhtmlform-md"><? echo $post['Post']['post']; ?></textarea>
+	<textarea class="mdhtmlform-html" name="post" style="display: none;"></textarea>
+	<br />
+  <div class="mdhtmlform-html"></div>
 	<br />
 	<input type="submit" value="提交 Submit" />
 	<br /><br />
 </form>
 
-<script type="text/javascript">
-	$(document).ready(
-		function()
-		{
-			$('.redactor_content').redactor();
-		}
-	);
-</script>
