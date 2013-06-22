@@ -40,11 +40,13 @@
 			</td>
 		</tr>
 	</tbody>
-	</table>
+  </table>
+  <h3>Post Intro</h3>
 	<textarea class="mdhtmlform-md" data-mdhtmlform-group="0"><? echo $post['Post']['post_intro']; ?></textarea>
 	<br />
-	<textarea class="mdhtmlform-md" data-mdhtmlform-group="1"><? echo $post['Post']['post']; ?></textarea>
-	<textarea class="mdhtmlform-html" data-mdhtmlform-group="1" name="post"></textarea>
+  <h3>Post Page</h3>
+	<textarea class="mdhtmlform-md" data-mdhtmlform-group="1" name="post"></textarea>
+	<textarea class="mdhtmlform-html" data-mdhtmlform-group="1"><? echo $post['Post']['post']; ?></textarea>
 	<br />
   <div class="mdhtmlform-html" data-mdhtmlform-group="1"></div>
 	<br />
