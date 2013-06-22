@@ -38,12 +38,14 @@
 		</tr>
 	</tbody>
 	</table>
-	<textarea class="redactor_content" name="post_intro">Post - Before the break</textarea>
+  <h3>Post Intro</h3>
+	<textarea name="post_intro">##Post - Before the break</textarea>
 	<br />
-	<textarea class="mdhtmlform-md">Post - After the break</textarea>
-	<textarea class="mdhtmlform-html" name="post" style="display: none;"></textarea>
+  <h3>Post Page</h3>
+	<textarea class="mdhtmlform-md" data-mdhtmlform-group="1">## Post - After the break</textarea>
+	<textarea class="mdhtmlform-html" data-mdhtmlform-group="1" name="post"></textarea>
 	<br />
-  <div class="mdhtmlform-html"></div>
+  <div class="mdhtmlform-html" data-mdhtmlform-group="1"></div>
 	<br />
 	<input type="submit" value="提交 Submit" />
 	<br /><br />

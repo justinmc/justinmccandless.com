@@ -42,7 +42,7 @@
 	</tbody>
   </table>
   <h3>Post Intro</h3>
-	<textarea class="post_intro"><? echo $post['Post']['post_intro']; ?></textarea>
+	<textarea name="post_intro"><? echo $post['Post']['post_intro']; ?></textarea>
 	<br />
   <h3>Post Page</h3>
 	<textarea class="mdhtmlform-md" data-mdhtmlform-group="1"><? echo $post['Post']['post']; ?></textarea>
