@@ -1,6 +1,6 @@
 <h2>编辑博客 Edit Post</h2>
 <br />
-<form name="addPost" class="mdhtmlform" action="<?= $this->Html->url('/admin/postsedit/') ?>" method="post" enctype="multipart/form-data">
+<form name="addPost" action="<?= $this->Html->url('/admin/postsedit/') ?>" method="post" enctype="multipart/form-data">
 	<table>
 	<tbody>
 		<tr>
@@ -41,12 +41,12 @@
 		</tr>
 	</tbody>
 	</table>
-	<textarea><? echo $post['Post']['post_intro']; ?></textarea>
+	<textarea class="mdhtmlform-md" data-mdhtmlform-group="0"><? echo $post['Post']['post_intro']; ?></textarea>
 	<br />
-	<textarea class="mdhtmlform-md"><? echo $post['Post']['post']; ?></textarea>
-	<textarea class="mdhtmlform-html" name="post" style="display: none;"></textarea>
+	<textarea class="mdhtmlform-md" data-mdhtmlform-group="1"><? echo $post['Post']['post']; ?></textarea>
+	<textarea class="mdhtmlform-html" data-mdhtmlform-group="1" name="post"></textarea>
 	<br />
-  <div class="mdhtmlform-html"></div>
+  <div class="mdhtmlform-html" data-mdhtmlform-group="1"></div>
 	<br />
 	<input type="submit" value="提交 Submit" />
 	<br /><br />
