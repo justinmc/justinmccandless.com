@@ -751,9 +751,9 @@ code {
     background-color: #F7F7F9;
     border: 1px solid #E1E1E8;
     color: #DD1144;
-    padding: 2px 4px;
+    padding: 1px 4px;
 }
-code, pre {
+pre>code {
     width: 95%;
     margin: 5px;
     padding: 8px;
