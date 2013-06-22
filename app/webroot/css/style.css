@@ -747,13 +747,15 @@ background-color: transparent;
 }
 
 /* code snippets! */
-code {
+code
+{
     background-color: #F7F7F9;
     border: 1px solid #E1E1E8;
     color: #DD1144;
     padding: 1px 4px;
 }
-pre {
+pre
+{
     width: 95%;
     margin: 5px;
     padding: 8px;
@@ -763,6 +765,13 @@ pre {
     border: 1px #cbcbcb solid;
     border-radius: 3px 3px 3px 3px;
     color: #333333;
+}
+pre code
+{
+    background-color: transparent;
+    border: 0 none;
+    color: inherit;
+    padding: 0;
 }
 
 /* code snippets inline */
