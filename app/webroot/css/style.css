@@ -746,17 +746,23 @@ tr.light
 background-color: transparent;
 }
 
-/* pre tag for code snippets */
-pre
-{
-border: 1px #cbcbcb solid;
-background-color: #efefef;
-width: 95%;
-margin: 5px;
-padding: 8px;
-font-family: courier;
-font-size: 12pt;
-overflow: auto;
+/* code snippets! */
+code {
+    background-color: #F7F7F9;
+    border: 1px solid #E1E1E8;
+    color: #DD1144;
+    padding: 2px 4px;
+}
+code, pre {
+    width: 95%;
+    margin: 5px;
+    padding: 8px;
+    font-family: courier;
+    font-size: 12pt;
+    overflow: auto;
+    border: 1px #cbcbcb solid;
+    border-radius: 3px 3px 3px 3px;
+    color: #333333;
 }
 
 /* code snippets inline */
