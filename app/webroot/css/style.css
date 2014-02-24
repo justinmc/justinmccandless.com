@@ -1055,5 +1055,23 @@ ul.nav li.neon5 a:hover {text-shadow: 2px 2px 0px #4dd0fb, 3px 3px 0px #000000;}
     #rightbar {
       display: none;
     }
+
+    .title-image {
+        display: none;
+    }
+}
+
+@media (max-width: 550px) {
+    #header-bg {
+        height: 90px;
+    }
+
+    h1.title {
+        content: "Justin";
+    }
+
+    ul.nav li {
+        margin: -4px 0px 0px -38px;
+    }
 }
 
