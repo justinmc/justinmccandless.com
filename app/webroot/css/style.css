@@ -857,6 +857,7 @@ h1#header_logo {
 #content{
 	background: #FFFFFF;
 	width: 73%;
+	float: left;
 	clear: both;
 	color: #333;
 	padding: 30px 20px 40px 20px;
@@ -1050,6 +1051,7 @@ ul.nav li.neon5 a:hover {text-shadow: 2px 2px 0px #4dd0fb, 3px 3px 0px #000000;}
 @media (max-width: 1000px) {
     #content {
         width: 90%;
+        float: none;
     }
 
     #rightbar {
@@ -1076,6 +1078,7 @@ ul.nav li.neon5 a:hover {text-shadow: 2px 2px 0px #4dd0fb, 3px 3px 0px #000000;}
 
     #content {
         width: 100%;
+        float: none;
     }
 }
 
