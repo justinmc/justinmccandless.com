@@ -98,8 +98,8 @@ google_ad_height = 150;
 			<div id="header">
 				<br />
 				<div class = "decCornerTop"></div>
-			    <a class = "h1" href = "<?= $this->Html->url('/'); ?>"><img src="<?= $this->Html->url('/img/vegas.png'); ?>" style="position: absolute; top: 12px; right: 54px;"></a>
-			    <a class = "h1" href = "<?= $this->Html->url('/'); ?>"><h1 style = "position: relative; top: -10px; left: 0px;">Justin McCandless</h1></a>
+			    <a class = "h1" href = "<?= $this->Html->url('/'); ?>"><img class="title-image" src="<?= $this->Html->url('/img/vegas.png'); ?>" style="position: absolute; top: 12px; right: 54px;"></a>
+			    <a class = "h1" href = "<?= $this->Html->url('/'); ?>"><h1 class="title" style = "position: relative; top: -10px; left: 0px;">Justin McCandless</h1></a>
 			    <ul class = "nav">
 				    <li class="neon1"><a href = "<?= $this->Html->url('/'); ?>">Home</a>
 				    <li class="neon2"><a href="<?= $this->Html->url('/about/'); ?>">About</a>
