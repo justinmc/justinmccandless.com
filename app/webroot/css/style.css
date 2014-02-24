@@ -851,7 +851,7 @@ h1#header_logo {
     height: auto;
     margin: 80px auto 0;
     overflow: auto;
-    text-align: left;
+    text-align: center;
     width: 80%;
 }
 #content{
@@ -861,6 +861,7 @@ h1#header_logo {
 	clear: both;
 	color: #333;
 	padding: 30px 20px 40px 20px;
+    margin: 0 auto;
 	overflow: auto;
 	min-height: 388px;
 	font-family:'Gill Sans','lucida grande', helvetica, arial, sans-serif;
@@ -868,7 +869,7 @@ h1#header_logo {
 }
 
 	.content_postPic img {
-		max-width: 800px;
+		max-width: 100%;
 		margin-bottom: 4px;
 	}
 
@@ -1049,7 +1050,7 @@ ul.nav li.neon5 a:hover {text-shadow: 2px 2px 0px #4dd0fb, 3px 3px 0px #000000;}
 
 @media (max-width: 1000px) {
     #content {
-        width: 100%;
+        width: 90%;
     }
 
     #rightbar {
@@ -1066,12 +1067,12 @@ ul.nav li.neon5 a:hover {text-shadow: 2px 2px 0px #4dd0fb, 3px 3px 0px #000000;}
         height: 90px;
     }
 
-    h1.title {
-        content: "Justin";
-    }
-
     ul.nav li {
         margin: -4px 0px 0px -38px;
+    }
+
+    #container_center {
+        width: 100%;
     }
 }
 
