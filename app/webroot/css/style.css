@@ -673,6 +673,7 @@ a.h1:link {text-decoration: none;}
 /* entry */
 p
 {
+font-size: 1.4em;
 font-family: verdana;
 text-align: justify;
 text-indent: 20px;
@@ -690,20 +691,20 @@ h2 {
 	background:#fff;
 	color: #646464;
 	font-family:'Gill Sans','lucida grande', helvetica, arial, sans-serif;
-	font-size: 190%;
+	font-size: 230%;
 }
 /* entry title */
 h3 {
 	color: #646464;
 	font-family:'Gill Sans','lucida grande', helvetica, arial, sans-serif;
-	font-size: 165%;
+	font-size: 205%;
 	text-decoration: none;
 }
 
 h4 {
 	color: #000000;
     font-weight: normal;
-    font-size: 150%;
+    font-size: 190%;
 }
 
 a h3 {
