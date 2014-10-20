@@ -49,19 +49,19 @@ class Post extends AppModel {
 
 	// uploads a file to /files/
 	// returns 1 on success, failure message on failure
-	public function uploadFile ($_FILES) {
+	public function uploadFile ($files) {
 		
 		$result = 1;
-		if(isset($_FILES['titlepic']) && !empty($_FILES['titlepic']['name'])) {
-			if ($_FILES["titlepic"]["error"] > 0) {
-				$result = "Upload failed: " . $_FILES["titlepic"]["error"][0];
+		if(isset($files['titlepic']) && !empty($files['titlepic']['name'])) {
+			if ($files["titlepic"]["error"] > 0) {
+				$result = "Upload failed: " . $files["titlepic"]["error"][0];
 			}
 			else {
-				if (file_exists("files/" . $_FILES["titlepic"]["name"])) {
+				if (file_exists("files/" . $files["titlepic"]["name"])) {
 			    	$result = "Upload failed: filename already exists on the server";
 			    }
 			    else {
-			    	move_uploaded_file($_FILES["titlepic"]["tmp_name"], "files/" . $_FILES["titlepic"]["name"]);
+			    	move_uploaded_file($files["titlepic"]["tmp_name"], "files/" . $files["titlepic"]["name"]);
 			    }
 			}
 		}
