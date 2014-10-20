@@ -658,17 +658,25 @@ body {
 	margin: 0;
 }
 
+a {
+    text-decoration: none;
+    color: #4fb9dc;
+}
+a:visited {
+    color: #4fb9dc;
+}
+a:hover, a:hover h2, a:hover h3, a:hover h4, a:hover h5 {
+    color: #388fab;
+}
+a:visited:hover {
+    color: #388fab;
+}
+
+a.h1:link {text-decoration: none;}
+
 a img {
 	border:none;
 }
-a:link {color: #000000; text-decoration: underline;}
-a:visited {color: #000000; text-decoration: underline;}
-a:hover {color: #4dd0fb; text-decoration: none;}
-a:visited:hover {color: #4dd0fb; text-decoration: none;}
-a h3:hover {color: #4dd0fb; text-decoration: none;}
-a h3:visited:hover {color: #4dd0fb; text-decoration: none;}
-
-a.h1:link {text-decoration: none;}
 
 /* entry */
 p
@@ -734,6 +742,27 @@ p.softwareLink
 {
 margin: 0;
 text-indent: 0px;
+}
+
+.projects .project {
+    margin-bottom: 128px;
+}
+
+.projects .project-logo {
+    max-width: 800px;
+}
+
+.projects .icons {
+    float: right;
+}
+
+.projects .icons .project-icon {
+    display: inline-block;
+    height: 32px;
+}
+
+.projects .icons a {
+    text-decoration: none;
 }
 
 /* used to alternate table row colors for ease of seeing rows */

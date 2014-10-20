@@ -1,130 +1,178 @@
-<h2>Projects</h2>
-<br />
-<p>
-	Here is a list of a few of the more noteworthy projects I've been involved in over the years.  I've been working on a lot of shorter term projects as I travel around both before and after graduation, and I'm constantly tinkering on side projects, so I expect this list to continue to grow.
-</p>
-<p>
-	For more specific stuff, find me on Linked In and github.
-</p>
-<a href="http://cn.linkedin.com/in/justinmccandless" style="text-decoration: none;" target="_blank">  
-	<img src="http://www.linkedin.com/img/webpromo/btn_viewmy_160x33.png" width="160" height="33" border="0" alt="View Justin McCandless's profile on LinkedIn" />      
-</a>
-&nbsp;&nbsp;
-<a href="http://www.github.com/justinmc" target="_blank">  
-	<img src="<?= $this->Html->url('/img/icon-github.png'); ?>" alt="Justin McCandless on github" />      
-</a>
-<br /><br /><br /><br />
-<h4><a href="http://www.smartots.com">SmarTots</a>, Childrens Mobile Educational Software</h4>
-<p>
-	I'm currently working for this Beijing startup, doing HTML5 mobile development and web development.  Check out <a href="http://www.smartots.com">smartots.com</a> to see what we're about.  
-</p>
-<br /><br />
-<h4>Multitasq, A reimagination of the todo list</h4>
-<p class="softwareLink">Post: <a href="http://www.justinmccandless.com/blog/Introducing+Multitasq">justinmccandless.com/blog/Introducing+Multitasq</a></p>
-<p class = "softwareLink">Live: <a href="http://www.multitasq.com">multitasq.com</a></p>
-<p class = "softwareLink">Mozilla Demo: <a href="https://developer.mozilla.org/en-US/demos/detail/multitasq">developer.mozilla.org/en-US/demos/detail/multitasq</a></p>
-<p class = "softwareLink">Source: <a href="http://github.com/justinmc/multitasq">github.com/justinmc/multitasq</a></p>
-<br />
-<p>
-	Ditching the idea of a glorified paper task list, this project aims to model how people truly get stuff done: in a hierarchy of constantly changing, expanding, and contracting ideas. It was built on the scalability of SVG to let the user step back and see the big picture as easily as they can focus down on the tiniest detail.  It's an open source side project that I develop and avidly use myself.
-</p>
-<br /><br />
-<h4>Database Syncronization, Telefonica of Peru</h4>
-<p>
-	I optimized the syncronization of Telefonica's South American Oracle internal software bug database to Peru, and wrote a report generating webapp for it using .Net.  This was during my stint interning in Telefonica's Lima branch just after graduation, in the Software Project Management office.
-</p>
-<br /><br />
-<h4>AIESEC Global Brand Audit, International Research and Development Global Support Team</h4>
-<p>
-	After putting a lot of time and energy into this student organization during university, I applied for and was accepted to a role working to support the leaders of AIESEC International, the highest level of the organization.  My team started work conducting a brand audit of AIESEC throughout the world, and I developed the first prototype of our data collection tool in Ruby on Rails, which would go on to collect data from young people in over 150 countries.
-</p>
-<br /><br />
-<h4>Rank Form, a jQuery Project to Intuitively Rank Choices in an HTML Form</h4>
-<p class="softwareLink">Post: <a href="http://www.justinmccandless.com/blog/Rank+Options+in+an+HTML+Form">www.justinmccandless.com/blog/Rank+Options+in+an+HTML+Form</a></p>
-<p class = "softwareLink">Demo: <a href = "http://www.justinmccandless.com/Rank-Form/">www.justinmccandless.com/rankform</a></p>
-<p class = "softwareLink">Source: <a href = "http://github.com/justinmc/Rank-Form">github.com/justinmc/Rank-Form</a></p>
-<br />
-<p>
-	I ran into the need to let users rank selections in an HTML form, and I wound up creating this side project.  It animates choices nicely and intuitively into place as users rank them, and sits smoothly on top of a hidden HTML form input.
-</p>
-<br /><br />
-<h4>Out of Order P6 Processor in Verilog</h4>
-<p>
-	I designed this processor from the ground up in a team of 4 for my final senior design project at Michigan (EECS 470, Computer Architecture).  We implemented instruction prefetching, correlative branch prediction, and a hit under miss data cache among many other features to create a simple but very solid top performing processor.
-</p>
-<br /><br />
-<h4>Server Network Process Optimization</h4>
-<p>I worked on this project with the
-<a href = "http://spsc.tugraz.at/">Signal Processing and Speech Communication Laboratory</a>
-at the 
-<a href = "http://www.tugraz.at" target = "blank">Graz University of Technology </a>
-in Austria.  The group ran many huge DSP simulations, and this tool optimized their completion time running on a network of servers by scheduling and managing processes.  I worked on our Ruby on Rails frontend.
-</p>
-<br><br>
-<h4>AIESEC Michigan's Website</h4>
-<p class = "softwareLink">Live: <s><a href = "http://www.aiesecmichigan.com">aiesecmichigan.com</a></s></p>
-<p class = "softwareLink">Source: <a href = "http://www.github.com/justinmc/aiesecmichigan.com">github.com/justinmc/aiesecmichigan.com</a></p>
-<br /> 
-<p>I wrote this website using PHP while a member of the student organization
-<a href = "http://www.aiesec.org">AIESEC</a>
-during college.  It also has a pretty big internal side that manages a lot of information for members, and authentication is handled by having users
-log into their Gmail accounts, confirming, and checking against a list of allowed Gmail users.
-</p>
-<br><br>
-<h4>AIESEC Michigan Online Yearbook</h4>
-<p class = "softwareLink">Live: <s><a href = "http://www.aiesecmichigan.com/yearbook/index.php">aiesecmichigan.com/yearbook</a></s></p>
-<p class = "softwareLink">Source: <a href = "http://www.github.com/justinmc/Yearbook">github.com/justinmc/Yearbook</a></p>
-<br />
-<p>
-A tribute to the 2009-2010 year at AIESEC Michigan that I wrote in PHP with some design help from a few other members.  It includes pictures of all
-of our members and a bunch from our events that year via a basic photo management system, as well as a comment system to make it as 
-much like a paper yearbook as possible.
-</p>
-<br><br>
-<h4>AIESEC US Summer National Conference 2010</h4>
-<p class = "softwareLink">Live: <s><a href = "http://www.aiesecmichigan.com/snc2010/index.php">aiesecmichigan.com/snc2010</a></s></p>
-<p class = "softwareLink">Source: <a href = "http://www.github.com/justinmc/snc2010">github.com/justinmc/snc2010</a></p>
-<br />
-<p>
-The website for one of the two conferences AIESEC United States holds every year.  Hundreds of students attended the conference, held in Detroit
-that year, from around the US and the world.  The site used a simple WYSIWYG content management system in PHP that I wrote to allow the other members
-of the team to help put content on the pages.
-</p>
-<br><br>
-<h4>Scrolling div bar</h4>
-<p class = "softwareLink">Source: <a href = "http://www.github.com/justinmc/Scrolling-Image-Bar">github.com/justinmc/Scrolling-Image-Bar</a></p>
-<br />
-<p>
-A simple side scrolling jQuery title bar like the ones you see on many websites.  Developed for aiesecmichigan.com
-and then turned into its own project.  Also has a vanilla javascript version.
-</p>
-<br><br>
-<h4>Bertacco Lab's Website</h4>
-<p class = "softwareLink">Live: <a href = "http://www.eecs.umich.edu/bertacco">eecs.umich.edu/bertacco</a></p>
-<br />
-<p>
-A website I developed for a research group at Michigan.  It uses a PHP content management system that retrieves all content for the site
-from Google Docs, so managing large amounts of information is as simple as keeping it in a spreadsheet.
-</p>
-<br><br>
-<h4>Markup Cartoons, Webcomic</h4>
-<p class = "softwareLink">Live: <s><a href = "http://www.markupcartoons.com">www.markupcartoons.com</a></s></p>
-<br />
-<p>
-I developed and ran this mouse drawn, MS Paint style webcomic for a year or so in college.  Hopefully I'll post all my old strips here on the blog at some point... 
-</p>
-<br><br>
-<h4>Website of Fundación Ecológica Arcoiris</h4>
-<p class = "softwareLink">Live: <a href = "http://www.arcoiris.org.ec">arcoiris.org.ec</a></p>
-<br />
-<p>
-A website I developed while working at this ecologic nonprofit in Ecuador for a summer.  I wrote a PHP content management system to allow
-updates and changes to be made in as simple a manner as possible, without the need for technical staff or other resources to maintain the site.
-</p>
-<br><br>
-<h4>The Electronics Handyman</h4>
-<p class = "softwareLink">Live: <s><a href = "http://www.theelectronicshandyman.com/">theelectronicshandyman.com</a></s></p>
-<br />
-<p>
-Applied for a business license, set up a website, and spent the summer running this business fixing customers' computers and other home electronics back during university.
-</p>
+<div class="projects">
+    <div class="project">
+        <a href="http://www.mentorthing.com">
+            <img src="http://justinmccandless.com/files/logo-biggish.png" class="project-logo" alt="Mentorthing"/>
+        </a>
+        <br />
+        <div class="icons">
+            <a href="https://www.linkedin.com/company/mentorthing">
+                <img src="/img/icon-linkedin.png" class="project-icon" title="Linkedin page" alt="Linkedin page"/>
+            </a>
+            <a href="http://justinmccandless.com/blog/Announcing+Mentorthing">
+                <img src="http://justinmccandless.com/img/vegas.png" class="project-icon" title="Blog post with more info" alt="Blog post with more info" />
+            </a>
+        </div>
+        <a href="http://www.mentorthing.com">
+            <h4>Mentorthing</h4>
+        </a>
+        <p>
+            An open platform where mentors and mentees can connect.  Written in the MEAN stack.
+        </p>
+    </div>
+    <div class="project">
+        <a href="http://www.multitasq.com">
+            <img src="http://justinmccandless.com/files/multitasqScreenshotSmall.png" class="project-logo" alt="Multitasq" />
+        </a>
+        <br />
+        <div class="icons">
+            <a href="https://developer.mozilla.org/en-US/demos/detail/multitasq">
+                <img src="/img/icon-mozilla-demo.png" class="project-icon" title="Available on Mozilla Demo Studio" alt="Available on Mozilla Demo Studio"/>
+            </a>
+            <a href="https://github.com/justinmc/multitasq">
+                <img src="/img/icon-github-octocat.png" class="project-icon" title="Source available on Github" alt="Source available on Github"/>
+            </a>
+        </div>
+        <a href="http://www.multitasq.com">
+            <h4>Multitasq</h4>
+        </a>
+        <p>
+            Ditching the idea of a glorified paper task list, this project aims to model how people truly get stuff done: in a hierarchy of constantly changing, expanding, and contracting ideas. It was built on the scalability of SVG to let the user step back and see the big picture as easily as they can focus down on the tiniest detail.  It's an open source side project that I develop and avidly use myself.
+        </p>
+    </div>
+    <div class="project">
+        <a href="http://mathpx.justinmccandless.com">
+            <img src="http://justinmccandless.com/files/mathpxArticleBig.png" class="project-logo" alt="Mathpx"/>
+        </a>
+        <br />
+        <div class="icons">
+            <a href="https://chrome.google.com/webstore/detail/mathpx/eopjfmdjkjcmapcgkobjfibcmlepehin">
+                <img src="/img/chrome-webstore.png" class="project-icon" title="Available in the Chrome Webstore" alt="Chrome Webstore logo" />
+            </a>
+            <a href="https://marketplace.firefox.com/app/mathpx/">
+                <img src="/img/firefox-marketplace.png" class="project-icon" title="Available in the Firefox Marketplace" alt="Firefox Marketplace logo" />
+            </a>
+            <a href="https://github.com/justinmc/mathpx">
+                <img src="/img/icon-github-octocat.png" class="project-icon" title="Source available on Github" alt="Github logo" />
+            </a>
+            <a href="http://justinmccandless.com/blog/Announcing+Mathpx">
+                <img src="http://justinmccandless.com/img/vegas.png" class="project-icon" title="Blog post with more info" alt="Blog post with more info" />
+            </a>
+        </div>
+        <a href="http://mathpx.justinmccandless.com">
+            <h4>Mathpx</h4>
+        </a>
+        <p>
+            A new take on a math game, it uses visual cues to teach kids the fundamentals of the math problems they're learning, instead of just how to memorize answers.  Written with HTML5 canvas.
+        </p>
+    </div>
+    <div class="project">
+        <a href="http://www.trivesty.com">
+            <img src="/img/logo-trivesty.png" class="project-logo" alt="Trivesty"/>
+        </a>
+        <br />
+        <div class="icons">
+        </div>
+        <a href="http://www.trivesty.com">
+            <h4>Trivesty</h4>
+        </a>
+        <p>
+            A real-time multiplayer trivia game written in Meteor.
+        </p>
+    </div>
+    <div class="project">
+        <a href="https://github.com/justinmc/hoopty">
+            <img src="http://184.106.225.148/public/hoopty_logo.gif" class="project-logo" alt="Hoopty"/>
+        </a>
+        <br />
+        <div class="icons">
+            <a href="https://github.com/justinmc/hoopty">
+                <img src="/img/icon-github-octocat.png" class="project-icon" title="Source available on Github" alt="Github logo" />
+            </a>
+        </div>
+        <a href="https://github.com/justinmc/hoopty">
+            <h4>Hoopty</h4>
+        </a>
+        <p>
+            A custom entity/component javascript game framework.  Tries to be as hands-off with your rendering as possible and just provides an organizational framework with some structure and useful entities and components.
+        </p>
+    </div>
+    <div class="project">
+        <a href="justinmccandless.com/demos/minesweeper/index.html">
+            <img src="http://justinmccandless.com/files/banner.png" class="project-logo" alt="Mentorthing"/>
+        </a>
+        <br />
+        <div class="icons">
+            <a href="https://chrome.google.com/webstore/detail/super-responsive-mineswee/mohhacgajmfbfiekiahbihcomaaohbeb?hl=en-US&gl=US">
+                <img src="/img/chrome-webstore.png" class="project-icon" title="Available in the Chrome Webstore" alt="Chrome Webstore logo" />
+            </a>
+            <a href="https://marketplace.firefox.com/app/super-responsive-minesweepe/">
+                <img src="/img/firefox-marketplace.png" class="project-icon" title="Available in the Firefox Marketplace" alt="Firefox Marketplace logo" />
+            </a>
+            <a href="https://developer.mozilla.org/en-US/demos/detail/svg-minesweeper">
+                <img src="/img/icon-mozilla-demo.png" class="project-icon" title="Featured on Mozilla Demo Studio" alt="Mozilla Demo Studio logo"/>
+            </a>
+            <a href="https://github.com/justinmc/SVG-Minesweeper">
+                <img src="/img/icon-github-octocat.png" class="project-icon" title="Source available on Github" alt="Github logo" />
+            </a>
+            <a href="http://justinmccandless.com/blog/Super+Responsive+Minesweeper">
+                <img src="http://justinmccandless.com/img/vegas.png" class="project-icon" title="Blog post with more info" alt="Blog post with more info" />
+            </a>
+        </div>
+        <a href="justinmccandless.com/demos/minesweeper/index.html">
+            <h4>Super Responsive Minesweeper</h4>
+        </a>
+        <p>
+            My take on minesweeper, written in SVG.
+        </p>
+    </div>
+    <div class="project">
+        <a href="http://backbone-boilerplate.meteor.com/">
+            <img src="/img/logo-mbb.png" class="project-logo" alt="Meteor Backbone Boilerplate"/>
+        </a>
+        <br />
+        <div class="icons">
+            <a href="https://github.com/justinmc/meteor-backbone-boilerplate">
+                <img src="/img/icon-github-octocat.png" class="project-icon" title="Source available on Github" alt="Source available on Github"/>
+            </a>
+            <a href="http://justinmccandless.com/blog/A+Starting+Point+for+Meteor+and+Backbone+Apps">
+                <img src="http://justinmccandless.com/img/vegas.png" class="project-icon" title="Blog post with more info" alt="Blog post with more info" />
+            </a>
+        </div>
+        <a href="http://backbone-boilerplate.meteor.com/">
+            <h4>Meteor Backbone Boilerplate</h4>
+        </a>
+        <p>
+            A starting point for people building paged applications in Meteor.  One of the earlier examples of this type of app in the Meteor community.
+        </p>
+    </div>
+    <div class="project">
+        <a href="https://github.com/justinmc/jQuery-Open-Carousel">
+            <img src="/img/logo-carousel.png" class="project-logo" alt="Open Carousel"/>
+        </a>
+        <br />
+        <div class="icons">
+            <a href="https://github.com/justinmc/jQuery-Open-Carousel">
+                <img src="/img/icon-github-octocat.png" class="project-icon" title="Source available on Github" alt="Source available on Github"/>
+            </a>
+            <a href="http://justinmccandless.com/blog/Open+Source+jQuery+Carousel">
+                <img src="http://justinmccandless.com/img/vegas.png" class="project-icon" title="Blog post with more info" alt="Blog post with more info" />
+            </a>
+        </div>
+        <a href="https://github.com/justinmc/jQuery-Open-Carousel">
+            <h4>Open Carousel</h4>
+        </a>
+        <p>
+            An open source jQuery carousel project that I started awhile back to give people an alternative to all the closed source or complicated alternatives at the time.
+        </p>
+    </div>
+    <p>
+        More on Github and Linkedin:
+    </p>
+    <a href="http://cn.linkedin.com/in/justinmccandless" style="text-decoration: none;" target="_blank">  
+        <img src="http://www.linkedin.com/img/webpromo/btn_viewmy_160x33.png" width="160" height="33" border="0" alt="View Justin McCandless's profile on LinkedIn" />      
+    </a>
+    &nbsp;&nbsp;
+    <a href="http://www.github.com/justinmc" target="_blank">  
+        <img src="<?= $this->Html->url('/img/icon-github.png'); ?>" alt="Justin McCandless on github" />      
+    </a>
+</div>
