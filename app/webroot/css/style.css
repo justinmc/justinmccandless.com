@@ -749,7 +749,7 @@ text-indent: 0px;
 }
 
 .projects .project-logo {
-    max-width: 800px;
+    max-width: 100%;
 }
 
 .projects .icons {
