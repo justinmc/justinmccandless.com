@@ -744,6 +744,16 @@ margin: 0;
 text-indent: 0px;
 }
 
+.about .about-aside {
+    float: right;
+    text-align: right;
+    padding: 8px;
+}
+
+.about .logo {
+  height: 25px;
+}
+
 .projects .project {
     margin-bottom: 128px;
 }
