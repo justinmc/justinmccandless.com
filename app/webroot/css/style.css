@@ -683,7 +683,7 @@ p
 {
 font-size: 1.3em;
 font-family: verdana;
-text-align: justify;
+text-align: left;
 text-indent: 20px;
 color: black;
 }
@@ -750,8 +750,8 @@ text-indent: 0px;
     padding: 8px;
 }
 
-.about .logo {
-  height: 25px;
+.about .logo>img {
+    height: 25px;
 }
 
 .projects .project {

@@ -1,7 +1,7 @@
 <div class="about">
   <h2>About Me</h2>
   <div class="about-aside">
-    <img src="<?= $this->Html->url('/img/justinLlama.jpg'); ?>" title = "I'm at least this awesome in real life">
+    <img src="<?= $this->Html->url('/img/justinLlama.jpg'); ?>" title = "I'm at least this awesome in real life" />
     <br /><br />
     <a href="https://plus.google.com/113942692574131661213?rel=author" class="logo"><img src="/img/googleplus.jpg" /></a>
     <a href="https://www.linkedin.com/in/justinmccandless" class="logo"><img src="/img/icon-linkedin.png" /></a>
